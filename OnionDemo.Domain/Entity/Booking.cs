@@ -20,8 +20,8 @@ public class Booking : DomainEntity
     {
         StartDate = startDate;
         EndDate = endDate;
-        AssureStartDateBeforeEndDate(startDate, endDate);
-        AssureBookingMustBeInFuture(startDate, DateOnly.FromDateTime(DateTime.Now));
+        AssureStartDateBeforeEndDate();
+        AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(bookingDomainService.GetOtherBookings(this));
     }
     public DateOnly StartDate { get; protected set; }
@@ -38,28 +38,30 @@ public class Booking : DomainEntity
         StartDate = startDate;
         EndDate = endDate;
 
-        AssureStartDateBeforeEndDate(startDate, endDate);
-        AssureBookingMustBeInFuture(startDate, DateOnly.FromDateTime(DateTime.Now));
+        AssureStartDateBeforeEndDate();
+        AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(bookingDomainService.GetOtherBookings(this));
     }
 
-    protected void AssureBookingMustBeInFuture(DateOnly startDate, DateOnly now)
+    protected void AssureStartDateBeforeEndDate()
     {
-        if (startDate <= now)
-            throw new ArgumentException();
+        if (!(StartDate < EndDate)) throw new ArgumentException("StartDato skal være før EndDato");
     }
 
-    protected void AssureStartDateBeforeEndDate(DateOnly startDate, DateOnly endDate)
+
+    protected void AssureBookingMustBeInFuture(DateOnly now)
     {
-        if (!(startDate < endDate))
-        {
-            throw new ArgumentException("Start date must be before the end date.");
-        }
+        // Booking skal være i fremtiden
+        if (StartDate <= now)
+            throw new ArgumentException("Booking skal være i fremtiden");
     }
 
     protected void AssureNoOverlapping(IEnumerable<Booking> otherBookings)
     {
-        if (otherBookings.Any(b => b.StartDate <= EndDate && b.EndDate >= StartDate)) return;
-        throw new ArgumentException("Booking overlaps with another booking.");
+        if (otherBookings.Any(other =>
+                (EndDate <= other.EndDate && EndDate >= other.StartDate) ||
+                (StartDate >= other.StartDate && StartDate <= other.EndDate) ||
+                (StartDate <= other.StartDate && EndDate >= other.EndDate)))
+            throw new Exception("Booking overlapper med en anden booking");
     }
 }

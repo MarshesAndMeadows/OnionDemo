@@ -10,3 +10,15 @@ E:\temp\LaptopVersion\OnionDemo.Domain\obj\Debug\net8.0\OnionDemo.Domain.dll
 E:\temp\LaptopVersion\OnionDemo.Domain\obj\Debug\net8.0\refint\OnionDemo.Domain.dll
 E:\temp\LaptopVersion\OnionDemo.Domain\obj\Debug\net8.0\OnionDemo.Domain.pdb
 E:\temp\LaptopVersion\OnionDemo.Domain\obj\Debug\net8.0\ref\OnionDemo.Domain.dll
+C:\temp\OnionDemo\OnionDemo.Domain\bin\Debug\net8.0\OnionDemo.Domain.deps.json
+C:\temp\OnionDemo\OnionDemo.Domain\bin\Debug\net8.0\OnionDemo.Domain.dll
+C:\temp\OnionDemo\OnionDemo.Domain\bin\Debug\net8.0\OnionDemo.Domain.pdb
+C:\temp\OnionDemo\OnionDemo.Domain\obj\Debug\net8.0\OnionDemo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\OnionDemo\OnionDemo.Domain\obj\Debug\net8.0\OnionDemo.Domain.AssemblyInfoInputs.cache
+C:\temp\OnionDemo\OnionDemo.Domain\obj\Debug\net8.0\OnionDemo.Domain.AssemblyInfo.cs
+C:\temp\OnionDemo\OnionDemo.Domain\obj\Debug\net8.0\OnionDemo.Domain.csproj.CoreCompileInputs.cache
+C:\temp\OnionDemo\OnionDemo.Domain\obj\Debug\net8.0\OnionDemo.Domain.sourcelink.json
+C:\temp\OnionDemo\OnionDemo.Domain\obj\Debug\net8.0\OnionDemo.Domain.dll
+C:\temp\OnionDemo\OnionDemo.Domain\obj\Debug\net8.0\refint\OnionDemo.Domain.dll
+C:\temp\OnionDemo\OnionDemo.Domain\obj\Debug\net8.0\OnionDemo.Domain.pdb
+C:\temp\OnionDemo\OnionDemo.Domain\obj\Debug\net8.0\ref\OnionDemo.Domain.dll
