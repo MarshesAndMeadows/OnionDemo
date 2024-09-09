@@ -54,7 +54,6 @@ public class BookingRepository : IBookingRepository
 
                     _db.SaveChanges();
                 }
-
             }
             catch (Exception)
             {
