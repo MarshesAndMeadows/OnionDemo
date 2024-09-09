@@ -38,8 +38,9 @@ namespace OnionDemo.Application.Command
         void IBookingCommand.DeleteBooking(DeleteBookingDto deleteBookingDto)
         {
             // Load
-            // Do
+            var booking = _repository.GetBooking(deleteBookingDto.Id);
             // Save
+            _repository.DeleteBooking(booking.Id);
         }
 
 

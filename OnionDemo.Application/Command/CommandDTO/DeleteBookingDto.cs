@@ -8,7 +8,7 @@ namespace OnionDemo.Application.Command.CommandDTO
 {
     public class DeleteBookingDto
     {
-
+        public int Id { get; set; }
     }
 
 }

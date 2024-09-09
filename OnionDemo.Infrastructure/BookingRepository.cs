@@ -50,7 +50,6 @@ public class BookingRepository : IBookingRepository
                     entry.OriginalValues.SetValues(databaseValues);
                     entry.CurrentValues.SetValues(booking);
 
-
                     entry.Property(nameof(booking.RowVersion)).OriginalValue = databaseValues.RowVersion;
 
                     _db.SaveChanges();

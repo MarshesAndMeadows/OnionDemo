@@ -3,7 +3,7 @@ using OnionDemo.Application.Command;
 
 namespace OnionDemo.Application;
 
-public static class DependencyInjection
+public static class ServiceCollectionExtension
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {

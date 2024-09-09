@@ -24,6 +24,8 @@ public class Booking : DomainEntity
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(bookingDomainService.GetOtherBookings(this));
     }
+
+
     public DateOnly StartDate { get; protected set; }
     public DateOnly EndDate { get; protected set; }
 
@@ -31,8 +33,6 @@ public class Booking : DomainEntity
     {
         return new Booking(startDate, endDate, bookingDomainService);
     }
-
-
     public void Update(DateOnly startDate, DateOnly endDate, IBookingDomainService bookingDomainService)
     {
         StartDate = startDate;
@@ -42,20 +42,16 @@ public class Booking : DomainEntity
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(bookingDomainService.GetOtherBookings(this));
     }
-
     protected void AssureStartDateBeforeEndDate()
     {
         if (!(StartDate < EndDate)) throw new ArgumentException("StartDato skal være før EndDato");
     }
-
-
     protected void AssureBookingMustBeInFuture(DateOnly now)
     {
         // Booking skal være i fremtiden
         if (StartDate <= now)
             throw new ArgumentException("Booking skal være i fremtiden");
     }
-
     protected void AssureNoOverlapping(IEnumerable<Booking> otherBookings)
     {
         if (otherBookings.Any(other =>
