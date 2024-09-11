@@ -5,6 +5,7 @@ using OnionDemo.Application;
 using OnionDemo.Application.Helpers;
 using OnionDemo.Application.Query;
 using OnionDemo.Domain.DomainServices;
+using OnionDemo.Infrastructure.BookingInfrastructure;
 using OnionDemo.Infrastructure.Queries;
 
 namespace OnionDemo.Infrastructure;

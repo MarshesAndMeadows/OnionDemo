@@ -25,7 +25,6 @@ public class Booking : DomainEntity
         AssureNoOverlapping(bookingDomainService.GetOtherBookings(this));
     }
 
-
     public DateOnly StartDate { get; protected set; }
     public DateOnly EndDate { get; protected set; }
 

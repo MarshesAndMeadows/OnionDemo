@@ -5,7 +5,7 @@ using OnionDemo.Application.Command.CommandDTO;
 using OnionDemo.Domain.Entity;
 using System.Data;
 
-namespace OnionDemo.Infrastructure;
+namespace OnionDemo.Infrastructure.BookingInfrastructure;
 
 public class BookingRepository : IBookingRepository
 {

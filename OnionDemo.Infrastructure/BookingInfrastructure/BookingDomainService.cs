@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Infrastructure
+namespace OnionDemo.Infrastructure.BookingInfrastructure
 {
     public class BookingDomainService : IBookingDomainService
     {
         private readonly BookMyHomeContext _db;
-        public BookingDomainService(BookMyHomeContext db) 
+        public BookingDomainService(BookMyHomeContext db)
         {
             _db = db;
         }
