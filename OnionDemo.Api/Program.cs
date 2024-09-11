@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using OnionDemo.Application;
 using OnionDemo.Application.Command;
 using OnionDemo.Application.Command.CommandDTO;
@@ -33,5 +34,6 @@ app.MapGet("/booking", (IBookingQuery query) => query.GetBookings());
 app.MapGet("/booking/{id}", (int id, IBookingQuery query) => query.GetBooking(id));
 app.MapPost("/booking", (CreateBookingDto booking, IBookingCommand command) => command.CreateBooking(booking));
 app.MapPut("/booking", (UpdateBookingDto booking, IBookingCommand command) => command.UpdateBooking(booking));
+app.MapDelete("/booking", ([FromBody]DeleteBookingDto booking, IBookingCommand command) => command.DeleteBooking(booking));
 
 app.Run();

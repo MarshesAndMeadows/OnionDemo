@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace OnionDemo.Application.Command.CommandDTO
 {
-    public class DeleteBookingDto
+    public record DeleteBookingDto
     {
         public int Id { get; set; }
+
+        public byte[] RowVersion { get; set; }
     }
 
 }

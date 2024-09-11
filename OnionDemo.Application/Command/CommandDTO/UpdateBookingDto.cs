@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnionDemo.Application.Command.CommandDTO
 {
-    public class UpdateBookingDto
+    public record UpdateBookingDto
     {
         public int Id { get; set; }
         public DateOnly StartDate { get; set; }
