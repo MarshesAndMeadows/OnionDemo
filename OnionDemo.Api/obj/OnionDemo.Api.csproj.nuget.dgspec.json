@@ -1,25 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\temp\\OnionDemo\\OnionDemo.Api\\OnionDemo.Api.csproj": {}
+    "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Api\\OnionDemo.Api.csproj": {}
   },
   "projects": {
-    "C:\\temp\\OnionDemo\\OnionDemo.Api\\OnionDemo.Api.csproj": {
+    "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Api\\OnionDemo.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\OnionDemo\\OnionDemo.Api\\OnionDemo.Api.csproj",
+        "projectUniqueName": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Api\\OnionDemo.Api.csproj",
         "projectName": "OnionDemo.Api",
-        "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Api\\OnionDemo.Api.csproj",
-        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\OnionDemo\\OnionDemo.Api\\obj\\",
+        "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Api\\OnionDemo.Api.csproj",
+        "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,17 +29,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\temp\\OnionDemo\\OnionDemo.Application\\OnionDemo.Application.csproj": {
-                "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Application\\OnionDemo.Application.csproj"
+              "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Application\\OnionDemo.Application.csproj": {
+                "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Application\\OnionDemo.Application.csproj"
               },
-              "C:\\temp\\OnionDemo\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj": {
-                "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj"
+              "C:\\temp\\OnionDemo_GitHub\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj": {
+                "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj"
               },
-              "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
-                "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj"
+              "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
+                "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj"
               },
-              "C:\\temp\\OnionDemo\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj": {
-                "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj"
+              "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj": {
+                "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj"
               }
             }
           }
@@ -111,22 +106,17 @@
         }
       }
     },
-    "C:\\temp\\OnionDemo\\OnionDemo.Application\\OnionDemo.Application.csproj": {
+    "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Application\\OnionDemo.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\OnionDemo\\OnionDemo.Application\\OnionDemo.Application.csproj",
+        "projectUniqueName": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Application\\OnionDemo.Application.csproj",
         "projectName": "OnionDemo.Application",
-        "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Application\\OnionDemo.Application.csproj",
-        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\OnionDemo\\OnionDemo.Application\\obj\\",
+        "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Application\\OnionDemo.Application.csproj",
+        "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -141,8 +131,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
-                "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj"
+              "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
+                "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj"
               }
             }
           }
@@ -192,22 +182,17 @@
         }
       }
     },
-    "C:\\temp\\OnionDemo\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj": {
+    "C:\\temp\\OnionDemo_GitHub\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\OnionDemo\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj",
+        "projectUniqueName": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj",
         "projectName": "OnionDemo.DatabaseMigration",
-        "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj",
-        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\OnionDemo\\OnionDemo.DatabaseMigration\\obj\\",
+        "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.DatabaseMigration\\OnionDemo.DatabaseMigration.csproj",
+        "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.DatabaseMigration\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -222,8 +207,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\temp\\OnionDemo\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj": {
-                "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj"
+              "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj": {
+                "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj"
               }
             }
           }
@@ -273,22 +258,17 @@
         }
       }
     },
-    "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
+    "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj",
+        "projectUniqueName": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj",
         "projectName": "OnionDemo.Domain",
-        "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj",
-        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\OnionDemo\\OnionDemo.Domain\\obj\\",
+        "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj",
+        "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -340,22 +320,17 @@
         }
       }
     },
-    "C:\\temp\\OnionDemo\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj": {
+    "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\OnionDemo\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj",
+        "projectUniqueName": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj",
         "projectName": "OnionDemo.Infrastructure",
-        "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\OnionDemo\\OnionDemo.Infrastructure\\obj\\",
+        "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Infrastructure\\OnionDemo.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -370,11 +345,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\temp\\OnionDemo\\OnionDemo.Application\\OnionDemo.Application.csproj": {
-                "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Application\\OnionDemo.Application.csproj"
+              "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Application\\OnionDemo.Application.csproj": {
+                "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Application\\OnionDemo.Application.csproj"
               },
-              "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
-                "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj"
+              "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
+                "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj"
               }
             }
           }

@@ -913,7 +913,7 @@
       ]
     },
     "System.Reflection.Metadata/1.6.0": {
-      "sha512": "I4aWCii7N1bmn43vviRfJQYW6UAco1G/CcjJouvgGdb/sr2BRTSnddhaPMg2oxu9VHFn8T1z3dTLq0pna8zmtA==",
+      "sha512": "COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
       "type": "package",
       "path": "system.reflection.metadata/1.6.0",
       "files": [
@@ -1094,26 +1094,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kasper\\.nuget\\packages\\": {},
-    "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\kaspe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\temp\\OnionDemo\\OnionDemo.Domain.Test\\OnionDemo.Domain.Test.csproj",
+      "projectUniqueName": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain.Test\\OnionDemo.Domain.Test.csproj",
       "projectName": "OnionDemo.Domain.Test",
-      "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Domain.Test\\OnionDemo.Domain.Test.csproj",
-      "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
-      "outputPath": "C:\\temp\\OnionDemo\\OnionDemo.Domain.Test\\obj\\",
+      "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain.Test\\OnionDemo.Domain.Test.csproj",
+      "packagesPath": "C:\\Users\\kaspe\\.nuget\\packages\\",
+      "outputPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain.Test\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\kaspe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1128,8 +1121,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
-              "projectPath": "C:\\temp\\OnionDemo\\OnionDemo.Domain\\OnionDemo.Domain.csproj"
+            "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj": {
+              "projectPath": "C:\\temp\\OnionDemo_GitHub\\OnionDemo.Domain\\OnionDemo.Domain.csproj"
             }
           }
         }
