@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using OnionDemo.Application.AccommodationCommand;
 using OnionDemo.Application.Command;
 
 namespace OnionDemo.Application;

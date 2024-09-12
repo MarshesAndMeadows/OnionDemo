@@ -30,3 +30,9 @@ C:\temp\OnionDemo\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.d
 C:\temp\OnionDemo\OnionDemo.Application\obj\Debug\net8.0\refint\OnionDemo.Application.dll
 C:\temp\OnionDemo\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.pdb
 C:\temp\OnionDemo\OnionDemo.Application\obj\Debug\net8.0\ref\OnionDemo.Application.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.csproj.AssemblyReference.cache
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.AssemblyInfoInputs.cache
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.AssemblyInfo.cs
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.csproj.CoreCompileInputs.cache
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.sourcelink.json

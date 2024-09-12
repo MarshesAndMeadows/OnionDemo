@@ -34,3 +34,9 @@ C:\temp\OnionDemo\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastruc
 C:\temp\OnionDemo\OnionDemo.Infrastructure\obj\Debug\net8.0\refint\OnionDemo.Infrastructure.dll
 C:\temp\OnionDemo\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.pdb
 C:\temp\OnionDemo\OnionDemo.Infrastructure\obj\Debug\net8.0\ref\OnionDemo.Infrastructure.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.csproj.AssemblyReference.cache
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.AssemblyInfoInputs.cache
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.AssemblyInfo.cs
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.csproj.CoreCompileInputs.cache
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.sourcelink.json

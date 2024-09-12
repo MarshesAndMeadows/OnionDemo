@@ -24,9 +24,9 @@ public class Booking : DomainEntity
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(bookingDomainService.GetOtherBookings(this));
     }
-
     public DateOnly StartDate { get; protected set; }
     public DateOnly EndDate { get; protected set; }
+    public Accommodation Accommodation { get; protected set; }
 
     public static Booking Create(DateOnly startDate, DateOnly endDate, IBookingDomainService bookingDomainService)
     {

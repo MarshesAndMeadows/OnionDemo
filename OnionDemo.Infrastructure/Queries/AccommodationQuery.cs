@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Application.AccomodationQuery
+namespace OnionDemo.Infrastructure.Queries
 {
-    public interface IAccomodationQuery
+    internal class AccommodationQuery
     {
-
     }
 }

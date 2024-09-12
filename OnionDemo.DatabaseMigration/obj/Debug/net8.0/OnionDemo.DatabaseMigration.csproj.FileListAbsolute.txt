@@ -38,3 +38,9 @@ C:\temp\OnionDemo\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.Databas
 C:\temp\OnionDemo\OnionDemo.DatabaseMigration\obj\Debug\net8.0\refint\OnionDemo.DatabaseMigration.dll
 C:\temp\OnionDemo\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.pdb
 C:\temp\OnionDemo\OnionDemo.DatabaseMigration\obj\Debug\net8.0\ref\OnionDemo.DatabaseMigration.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.csproj.AssemblyReference.cache
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.AssemblyInfoInputs.cache
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.AssemblyInfo.cs
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.csproj.CoreCompileInputs.cache
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.sourcelink.json

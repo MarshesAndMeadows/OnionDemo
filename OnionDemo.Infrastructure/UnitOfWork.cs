@@ -1,20 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using OnionDemo.Application.Helpers;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnionDemo.Infrastructure
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork<T> : IUnitOfWork where T : DbContext
     {
         private readonly DbContext _db;
-        private IDbContextTransaction _transaction;
-        public UnitOfWork(BookMyHomeContext db)
+        private IDbContextTransaction? _transaction;
+        public UnitOfWork(T db)
         {
             _db = db;
         }

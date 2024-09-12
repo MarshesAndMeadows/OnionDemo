@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace OnionDemo.Domain.Entity
 {
-    public class Host
+    public class Host : DomainEntity
     {
-        public int Id { get; private set; }
+
     }
 }

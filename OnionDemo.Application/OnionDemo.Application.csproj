@@ -9,11 +9,6 @@
     <ProjectReference Include="..\OnionDemo.Domain\OnionDemo.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AccomodationCommand\CommandDTO\" />
-    <Folder Include="AccomodationQuery\QueryDTO\" />
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

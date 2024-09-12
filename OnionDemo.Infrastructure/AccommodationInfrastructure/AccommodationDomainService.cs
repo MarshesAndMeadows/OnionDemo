@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Application.AccomodationCommand
+namespace OnionDemo.Infrastructure.AccommodationInfrastructure
 {
-    public interface IAccomodationCommand
+    internal class AccommodationDomainService
     {
-        void 
     }
 }
