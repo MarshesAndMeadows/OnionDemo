@@ -8,16 +8,11 @@ using System.Threading.Tasks;
 
 namespace OnionDemo.Infrastructure.BookingInfrastructure
 {
-    public class BookingDomainService : IBookingDomainService
+    public class BookingDomainService(BookMyHomeContext db) : IBookingDomainService
     {
-        private readonly BookMyHomeContext _db;
-        public BookingDomainService(BookMyHomeContext db)
-        {
-            _db = db;
-        }
         public IEnumerable<Booking> GetOtherBookings(Booking booking)
         {
-            var result = _db.Bookings
+            var result = db.Bookings
                 .Where(a => a.Id != booking.Id)
                 .ToList();
             return result;

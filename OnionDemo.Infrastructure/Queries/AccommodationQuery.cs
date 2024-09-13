@@ -11,17 +11,11 @@ using OnionDemo.Application.AccommodationQuery.QueryDTO;
 
 namespace OnionDemo.Infrastructure.Queries
 {
-    public class AccommodationQuery : IAccommodationQuery
+    public class AccommodationQuery(BookMyHomeContext db) : IAccommodationQuery
     {
-        private readonly BookMyHomeContext _db;
-
-        public AccommodationQuery(BookMyHomeContext db)
-        {
-            _db = db;
-        }
         AccommodationDTO IAccommodationQuery.GetAccommodation(int id)
         {
-            var accommodation = _db.Bookings.AsNoTracking().Single(a => a.Id == id);
+            var accommodation = db.Bookings.AsNoTracking().Single(a => a.Id == id);
             return new AccommodationDTO
             {
                 Id = accommodation.Id,
@@ -31,7 +25,7 @@ namespace OnionDemo.Infrastructure.Queries
 
         IEnumerable<AccommodationDTO> IAccommodationQuery.GetAccommodations()
         {
-            var result = _db.Accommodations.AsNoTracking().
+            var result = db.Accommodations.AsNoTracking().
                 Select(a => new AccommodationDTO
                 {
                     Id = a.Id,

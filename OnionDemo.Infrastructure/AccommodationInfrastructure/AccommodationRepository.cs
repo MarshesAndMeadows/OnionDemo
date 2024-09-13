@@ -8,28 +8,28 @@ using System.Threading.Tasks;
 
 namespace OnionDemo.Infrastructure.AccommodationInfrastructure
 {
-    public class AccommodationRepository(BookMyHomeContext context) : IAccommodationRepository
+    public class AccommodationRepository(BookMyHomeContext db) : IAccommodationRepository
     {
         void IAccommodationRepository.AddAccommodation(Accommodation accommodation)
         {
-            context.Accommodations.Add(accommodation);
-            context.SaveChanges();
+            db.Accommodations.Add(accommodation);
+            db.SaveChanges();
         }
         Accommodation IAccommodationRepository.GetAccommodation(int id)
         {
-            return context.Accommodations.Single(a => a.Id == id);
+            return db.Accommodations.Single(a => a.Id == id);
         }
         void IAccommodationRepository.UpdateAccommodation(Accommodation accommodation, byte[] rowVersion)
         {
-            context.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
-            context.Accommodations.Update(accommodation);
-            context.SaveChanges();
+            db.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
+            db.Accommodations.Update(accommodation);
+            db.SaveChanges();
         }
         void IAccommodationRepository.DeleteAccommodation(Accommodation accommodation, byte[] rowVersion)
         {
-            context.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
-            context.Accommodations.Remove(accommodation);
-            context.SaveChanges();
+            db.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
+            db.Accommodations.Remove(accommodation);
+            db.SaveChanges();
         }
     }
 }

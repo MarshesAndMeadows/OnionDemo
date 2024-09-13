@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OnionDemo.Application;
+using OnionDemo.Application.AccommodationQuery;
 using OnionDemo.Application.Helpers;
 using OnionDemo.Application.Query;
 using OnionDemo.Domain.DomainServices;
@@ -18,6 +19,7 @@ public static class ServiceCollectionExtension
         services.AddScoped<IBookingQuery, BookingQuery>();
         services.AddScoped<IBookingDomainService, BookingDomainService>();
         services.AddScoped<IBookingRepository, BookingRepository>();
+        services.AddScoped<IAccommodationQuery, AccommodationQuery>();
         services.AddScoped<IAccommodationRepository, AccommodationRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork<BookMyHomeContext>>();
 

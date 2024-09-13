@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnionDemo.Application.AccommodationCommand.CommandDTO
 {
-    public class DeleteAccommodationDto
+    public record DeleteAccommodationDto
     {
         public int Id { get; set; }
 

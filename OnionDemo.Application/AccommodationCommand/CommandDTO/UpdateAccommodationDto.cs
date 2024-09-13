@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnionDemo.Application.AccommodationCommand.CommandDTO
 {
-    public class UpdateAccommodationDto
+    public record UpdateAccommodationDto
     {
         public int Id { get; set; }
         public List<BookingDto> Bookings { get; set; }

@@ -9,17 +9,11 @@ using System.Threading.Tasks;
 
 namespace OnionDemo.Infrastructure.Queries
 {
-    public class BookingQuery : IBookingQuery
+    public class BookingQuery(BookMyHomeContext db) : IBookingQuery
     {
-        private readonly BookMyHomeContext _db;
-
-        public BookingQuery(BookMyHomeContext db)
-        {
-            _db = db;
-        }
         BookingDto IBookingQuery.GetBooking(int id)
         {
-            var booking = _db.Bookings.AsNoTracking().Single(a => a.Id == id);
+            var booking = db.Bookings.AsNoTracking().Single(a => a.Id == id);
             return new BookingDto
             {
                 Id = booking.Id,
@@ -31,7 +25,7 @@ namespace OnionDemo.Infrastructure.Queries
 
         IEnumerable<BookingDto> IBookingQuery.GetBookings()
         {
-            var result = _db.Bookings.AsNoTracking().
+            var result = db.Bookings.AsNoTracking().
                 Select(a => new BookingDto
                 {
                     Id = a.Id,

@@ -39,7 +39,6 @@ public class Booking : DomainEntity
     }
     protected void AssureBookingMustBeInFuture(DateOnly now)
     {
-        // Booking skal være i fremtiden
         if (StartDate <= now)
             throw new ArgumentException("Booking skal være i fremtiden");
     }

@@ -5,14 +5,12 @@ using System.Data;
 
 namespace OnionDemo.Infrastructure
 {
-    public class UnitOfWork<T> : IUnitOfWork where T : DbContext
+    public class UnitOfWork<T>(T db) : IUnitOfWork
+        where T : DbContext
     {
-        private readonly DbContext _db;
+        private readonly DbContext _db = db;
         private IDbContextTransaction? _transaction;
-        public UnitOfWork(T db)
-        {
-            _db = db;
-        }
+
         void IUnitOfWork.BeginTransaction(IsolationLevel isolationLevel)
         {
             if (_db.Database.CurrentTransaction != null) return;

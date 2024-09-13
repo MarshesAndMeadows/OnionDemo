@@ -6,17 +6,11 @@ using OnionDemo.Domain.Entity;
 
 namespace OnionDemo.Application.Command
 {
-    public class BookingCommand : IBookingCommand
+    public class BookingCommand(IBookingRepository repository, IBookingDomainService domainService)
+        : IBookingCommand
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IBookingRepository _repository;
-        private readonly IBookingDomainService _domainService;
 
-        public BookingCommand(IBookingRepository repository, IBookingDomainService domainService)
-        {
-            _repository = repository;
-            _domainService = domainService;
-        }
         void IBookingCommand.CreateBooking(CreateBookingDto bookingDto)
         {
             try
@@ -24,10 +18,10 @@ namespace OnionDemo.Application.Command
                 _unitOfWork.BeginTransaction();
 
                 // Do
-                var booking = Booking.Create(bookingDto.StartDate, bookingDto.EndDate, _domainService);
+                var booking = Booking.Create(bookingDto.StartDate, bookingDto.EndDate, domainService);
 
                 // Save
-                _repository.AddBooking(booking);
+                repository.AddBooking(booking);
 
                 _unitOfWork.Commit();
             }
@@ -44,13 +38,13 @@ namespace OnionDemo.Application.Command
                 _unitOfWork.BeginTransaction();
 
                 // Load
-                var booking = _repository.GetBooking(updateBookingDto.Id);
+                var booking = repository.GetBooking(updateBookingDto.Id);
 
                 // Do
-                booking.Update(updateBookingDto.StartDate, updateBookingDto.EndDate, _domainService);
+                booking.Update(updateBookingDto.StartDate, updateBookingDto.EndDate, domainService);
 
                 // Save
-                _repository.UpdateBooking(booking, updateBookingDto.RowVersion);
+                repository.UpdateBooking(booking, updateBookingDto.RowVersion);
 
                 _unitOfWork.Commit();
             }
@@ -63,9 +57,9 @@ namespace OnionDemo.Application.Command
         void IBookingCommand.DeleteBooking(DeleteBookingDto deleteBookingDto)
         {
             // Load
-            var booking = _repository.GetBooking(deleteBookingDto.Id);
+            var booking = repository.GetBooking(deleteBookingDto.Id);
             // Save
-            _repository.DeleteBooking(booking, deleteBookingDto.RowVersion);
+            repository.DeleteBooking(booking, deleteBookingDto.RowVersion);
         }
 
 

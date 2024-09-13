@@ -62,7 +62,7 @@ namespace OnionDemo.Application.AccommodationCommand
                 var accommodation = _repository.GetAccommodation(updateAccommodationDto.Id);
 
                 // Do
-                accommodation.Update(accommodation, updateAccommodationDto.RowVersion);
+                accommodation.Update(accommodation);
 
                 // Save
                 _repository.UpdateAccommodation(accommodation, updateAccommodationDto.RowVersion);

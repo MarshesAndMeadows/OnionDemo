@@ -19,7 +19,7 @@ namespace OnionDemo.Domain.Entity
         {
             return new Accommodation(bookings, host);
         }
-        public void Update(Accommodation accommodation, byte[] rowVersion)
+        public void Update(Accommodation accommodation)
         {
             Bookings = accommodation.Bookings;
             Host = accommodation.Host;
