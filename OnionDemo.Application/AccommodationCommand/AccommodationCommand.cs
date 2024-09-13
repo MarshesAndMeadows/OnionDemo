@@ -25,13 +25,16 @@ namespace OnionDemo.Application.AccommodationCommand
             try
             {
                 _unitOfWork.BeginTransaction();
+                //Load
+                //create host repository, get host via createaccDTO.Host.Id and pass it into the create thing
+                var host = new Host();
 
                 // Do
-                var accommodation = Accommodation.Create();
+                var accommodation = Accommodation.Create(new List<Booking>(),host);
 
                 // Save
                 _repository.AddAccommodation(accommodation);
-
+                 
                 _unitOfWork.Commit();
             }
             catch (Exception)

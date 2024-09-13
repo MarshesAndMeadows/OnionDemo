@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Infrastructure.AccommodationInfrastructure
+namespace OnionDemo.Application.HostQuery
 {
-    internal class AccommodationDomainService
+    public class HostDto
     {
+        public int Id { get; set; }
     }
 }

@@ -7,33 +7,27 @@ using System.Data;
 
 namespace OnionDemo.Infrastructure.BookingInfrastructure;
 
-public class BookingRepository : IBookingRepository
+public class BookingRepository(BookMyHomeContext context) : IBookingRepository
 {
-    private readonly BookMyHomeContext _db;
-    public BookingRepository(BookMyHomeContext context)
-    {
-        _db = context;
-    }
-
     void IBookingRepository.AddBooking(Booking booking)
     {
-        _db.Bookings.Add(booking);
-        _db.SaveChanges();
+        context.Bookings.Add(booking);
+        context.SaveChanges();
     }
     Booking IBookingRepository.GetBooking(int id)
     {
-        return _db.Bookings.Single(a => a.Id == id);
+        return context.Bookings.Single(a => a.Id == id);
     }
     void IBookingRepository.UpdateBooking(Booking booking, byte[] rowVersion)
     {
-        _db.Entry(booking).Property(nameof(Booking.RowVersion)).OriginalValue = rowVersion;
-        _db.Bookings.Update(booking);
-        _db.SaveChanges();
+        context.Entry(booking).Property(nameof(Booking.RowVersion)).OriginalValue = rowVersion;
+        context.Bookings.Update(booking);
+        context.SaveChanges();
     }
     void IBookingRepository.DeleteBooking(Booking booking, byte[] rowVersion)
     {
-        _db.Entry(booking).Property(nameof(Booking.RowVersion)).OriginalValue = rowVersion;
-        _db.Bookings.Remove(booking);
-        _db.SaveChanges();
+        context.Entry(booking).Property(nameof(Booking.RowVersion)).OriginalValue = rowVersion;
+        context.Bookings.Remove(booking);
+        context.SaveChanges();
     }
 }

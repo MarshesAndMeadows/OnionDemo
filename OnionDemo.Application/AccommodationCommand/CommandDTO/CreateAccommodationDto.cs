@@ -10,6 +10,8 @@ namespace OnionDemo.Application.AccommodationCommand.CommandDTO
 {
     public class CreateAccommodationDto
     {
-        public Host host;
+        public List<BookingDto> Bookings { get; set; }
+
+        public HostDto Host { get; set; }
     }
 }

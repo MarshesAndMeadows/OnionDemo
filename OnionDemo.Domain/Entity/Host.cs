@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OnionDemo.Domain.Entity
+﻿namespace OnionDemo.Domain.Entity
 {
     public class Host : DomainEntity
     {
-
+        public List<Accommodation> Accommodations { get; protected set; }
     }
 }
