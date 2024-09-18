@@ -40,3 +40,15 @@ C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Inf
 C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.AssemblyInfo.cs
 C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.csproj.CoreCompileInputs.cache
 C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.sourcelink.json
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\bin\Debug\net8.0\OnionDemo.Infrastructure.deps.json
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\bin\Debug\net8.0\OnionDemo.Infrastructure.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\bin\Debug\net8.0\OnionDemo.Infrastructure.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\bin\Debug\net8.0\OnionDemo.Application.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\bin\Debug\net8.0\OnionDemo.Domain.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\bin\Debug\net8.0\OnionDemo.Domain.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\bin\Debug\net8.0\OnionDemo.Application.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDem.23E62256.Up2Date
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\refint\OnionDemo.Infrastructure.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\OnionDemo.Infrastructure.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.Infrastructure\obj\Debug\net8.0\ref\OnionDemo.Infrastructure.dll

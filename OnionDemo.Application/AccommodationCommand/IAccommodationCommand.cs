@@ -1,6 +1,6 @@
 ﻿using OnionDemo.Application.AccommodationCommand.CommandDTO;
 
-namespace OnionDemo.Application.AccommodationCommand
+namespace OnionDemo.Application.Command
 {
     public interface IAccommodationCommand
     {

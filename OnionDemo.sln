@@ -15,13 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionDemo.Infrastructure", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionDemo.DatabaseMigration", "OnionDemo.DatabaseMigration\OnionDemo.DatabaseMigration.csproj", "{23E0FC97-92F7-4B7F-A92B-1685ECD1D87C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionDemo.ApplicationTests", "OnionDemo.ApplicationTests\OnionDemo.ApplicationTests.csproj", "{921E1CEF-51A2-4556-8069-899A98F22E67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{557FCA81-A911-45F0-815D-2F92EC653B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -48,5 +47,12 @@ Global
 		{23E0FC97-92F7-4B7F-A92B-1685ECD1D87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23E0FC97-92F7-4B7F-A92B-1685ECD1D87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23E0FC97-92F7-4B7F-A92B-1685ECD1D87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{921E1CEF-51A2-4556-8069-899A98F22E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{921E1CEF-51A2-4556-8069-899A98F22E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{921E1CEF-51A2-4556-8069-899A98F22E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{921E1CEF-51A2-4556-8069-899A98F22E67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

@@ -44,3 +44,17 @@ C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.
 C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.AssemblyInfo.cs
 C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.csproj.CoreCompileInputs.cache
 C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.sourcelink.json
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\bin\Debug\net8.0\OnionDemo.DatabaseMigration.deps.json
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\bin\Debug\net8.0\OnionDemo.DatabaseMigration.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\bin\Debug\net8.0\OnionDemo.DatabaseMigration.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\bin\Debug\net8.0\OnionDemo.Application.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\bin\Debug\net8.0\OnionDemo.Domain.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\bin\Debug\net8.0\OnionDemo.Infrastructure.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\bin\Debug\net8.0\OnionDemo.Infrastructure.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\bin\Debug\net8.0\OnionDemo.Application.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\bin\Debug\net8.0\OnionDemo.Domain.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDem.0B982CF6.Up2Date
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\refint\OnionDemo.DatabaseMigration.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\OnionDemo.DatabaseMigration.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.DatabaseMigration\obj\Debug\net8.0\ref\OnionDemo.DatabaseMigration.dll

@@ -36,3 +36,13 @@ C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Applic
 C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.AssemblyInfo.cs
 C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.csproj.CoreCompileInputs.cache
 C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.sourcelink.json
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\bin\Debug\net8.0\OnionDemo.Application.deps.json
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\bin\Debug\net8.0\OnionDemo.Application.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\bin\Debug\net8.0\OnionDemo.Application.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\bin\Debug\net8.0\OnionDemo.Domain.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\bin\Debug\net8.0\OnionDemo.Domain.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDem.C0BD6C0C.Up2Date
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\refint\OnionDemo.Application.dll
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\OnionDemo.Application.pdb
+C:\temp\OnionDemo_GitHub\OnionDemo.Application\obj\Debug\net8.0\ref\OnionDemo.Application.dll

@@ -5,7 +5,7 @@ using OnionDemo.Domain.DomainServices;
 using OnionDemo.Domain.Entity;
 using OnionDemo.Application.AccommodationCommand.CommandDTO;
 
-namespace OnionDemo.Application.AccommodationCommand
+namespace OnionDemo.Application.Command
 {
     public class AccommodationCommand : IAccommodationCommand
     {
@@ -13,28 +13,28 @@ namespace OnionDemo.Application.AccommodationCommand
         private readonly IUnitOfWork _unitOfWork;
         private readonly IAccommodationRepository _repository;
 
-        public AccommodationCommand(IAccommodationRepository repository)
+        public AccommodationCommand(IAccommodationRepository repository, IUnitOfWork unitOfWork)
         {
             _repository = repository;
+            _unitOfWork = unitOfWork;
         }
 
         public AccommodationCommand(){}
 
-        void IAccommodationCommand.CreateAccommodation(CreateAccommodationDto createAccommodationDto)
+        public void CreateAccommodation(CreateAccommodationDto createAccommodationDto)
         {
             try
             {
                 _unitOfWork.BeginTransaction();
                 //Load
-                //create host repository, get host via createaccDTO.Host.Id and pass it into the create thing
-                var host = new Host();
+                var host = new Host(createAccommodationDto.Host.Id);
 
                 // Do
                 var accommodation = Accommodation.Create(new List<Booking>(),host);
 
                 // Save
                 _repository.AddAccommodation(accommodation);
-                 
+                
                 _unitOfWork.Commit();
             }
             catch (Exception)

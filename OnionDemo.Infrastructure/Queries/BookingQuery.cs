@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnionDemo.Application.Query;
 using OnionDemo.Application.Query.QueryDTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnionDemo.Infrastructure.Queries
 {
