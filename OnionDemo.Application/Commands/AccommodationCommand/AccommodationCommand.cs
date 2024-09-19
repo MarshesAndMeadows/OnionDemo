@@ -1,11 +1,10 @@
-﻿using OnionDemo.Application.Command;
-using OnionDemo.Application.Helpers;
+﻿using OnionDemo.Application.Helpers;
 using OnionDemo.Domain.DomainServices;
 using OnionDemo.Domain.Entity;
-using OnionDemo.Application.AccommodationCommand.CommandDTO;
-using OnionDemo.Application.HostQuery;
+using OnionDemo.Application.Commands.AccommodationCommand.CommandDTO;
+using OnionDemo.Application.Queries.BookingQuery;
 
-namespace OnionDemo.Application.Command
+namespace OnionDemo.Application.Commands.AccommodationCommand
 {
     public class AccommodationCommand : IAccommodationCommand
     {
@@ -17,11 +16,7 @@ namespace OnionDemo.Application.Command
             _repository = repository;
             _unitOfWork = unitOfWork;
         }
-
-        public AccommodationCommand()
-        {
-        }
-
+/*
         public void CreateAccommodation(CreateAccommodationDto createAccommodationDto)
         {
             try
@@ -76,24 +71,35 @@ namespace OnionDemo.Application.Command
                 throw;
             }
         }
-
+*/
         void IAccommodationCommand.CreateBooking(CreateBookingDto bookingDto)
         {
             try
             {
                 _unitOfWork.BeginTransaction();
+                
+                //Load
+                Accommodation accommodation = _repository.GetAccommodation(bookingDto.AccommodationId);
 
                 // Do
-                var booking = Booking.Create(bookingDto.StartDate, bookingDto.EndDate);
+                accommodation.CreateBooking(bookingDto.StartDate, bookingDto.EndDate);
 
                 // Save
-                _repository.AddBooking(booking);
+                _repository.AddBooking(accommodation);
 
                 _unitOfWork.Commit();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                _unitOfWork.Rollback();
+                try
+                {
+                    _unitOfWork.Rollback();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Rollback failed! {ex.Message}", e);
+                }
+
                 throw;
             }
         }
@@ -104,20 +110,28 @@ namespace OnionDemo.Application.Command
             {
                 _unitOfWork.BeginTransaction();
 
-                // Load
-                var booking = _repository.GetBooking(updateBookingDto.Id);
+                //Load
+                Accommodation accommodation = _repository.GetAccommodation(updateBookingDto.AccommodationId);
 
                 // Do
-                booking.Update(updateBookingDto.StartDate, updateBookingDto.EndDate, existingBookings);
+                var booking = accommodation.UpdateBooking(updateBookingDto.Id, updateBookingDto.StartDate, updateBookingDto.EndDate);
 
                 // Save
                 _repository.UpdateBooking(booking, updateBookingDto.RowVersion);
 
                 _unitOfWork.Commit();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                _unitOfWork.Rollback();
+                try
+                {
+                    _unitOfWork.Rollback();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Rollback failed! {ex.Message}", e);
+                }
+
                 throw;
             }
         }

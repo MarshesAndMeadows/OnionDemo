@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using OnionDemo.Application;
 using OnionDemo.Application.AccommodationCommand;
-using OnionDemo.Application.AccommodationCommand.CommandDTO;
-using OnionDemo.Application.Command;
-using OnionDemo.Application.Query;
+using OnionDemo.Application.Commands.AccommodationCommand;
+using OnionDemo.Application.Commands.AccommodationCommand.CommandDTO;
+using OnionDemo.Application.Queries.BookingQuery;
+using OnionDemo.Application.Queries.HostQuery;
 using OnionDemo.Infrastructure;
 
 
@@ -31,12 +32,13 @@ app.UseHttpsRedirection();
 
 // https://learn.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-8.0&tabs=visual-studio
 app.MapGet("/hello", () => "Hello World");
+
+
 app.MapGet("/booking", (IBookingQuery query) => query.GetBookings());
 app.MapGet("/booking/{id}", (int id, IBookingQuery query) => query.GetBooking(id));
-app.MapPost("/booking", (CreateBookingDto booking, IBookingCommand command) => command.CreateBooking(booking));
-app.MapPut("/booking", (UpdateBookingDto booking, IBookingCommand command) => command.UpdateBooking(booking));
-app.MapDelete("/booking", ([FromBody]DeleteBookingDto booking, IBookingCommand command) => command.DeleteBooking(booking));
-app.MapPost("/accommodation",
-    (CreateAccommodationDto accommodation, IAccommodationCommand command) =>
-        command.CreateAccommodation(accommodation));
+//app.MapPost("/booking", ([FromBody] CreateBookingDto booking, IAccommodationCommand command) => command.CreateBooking(booking));
+//app.MapPut("/booking", ([FromBody] UpdateBookingDto booking, IAccommodationCommand command) => command.UpdateBooking(booking));
+
+app.MapGet("/host/id", (int id, IHostQuery query) => query.GetAccommodations(id));
+
 app.Run();

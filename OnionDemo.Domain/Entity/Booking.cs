@@ -2,7 +2,6 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace OnionDemo.Domain.Entity;
-
 public class Booking : DomainEntity
 {
 
@@ -12,26 +11,25 @@ public class Booking : DomainEntity
     {
         StartDate = startDate;
         EndDate = endDate;
+
         AssureStartDateBeforeEndDate();
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(existingBookings);
     }
+
+
     public DateOnly StartDate { get; protected set; }
     public DateOnly EndDate { get; protected set; }
-    public Accommodation Accommodation { get; protected set; }
 
-    public static Booking Create(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
-    {
-        return new Booking(startDate, endDate, existingBookings);
-    }
-    public void Update(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
+
+    public void Update(DateOnly startDate, DateOnly endDate, IBookingDomainService bookingDomainService)
     {
         StartDate = startDate;
         EndDate = endDate;
 
         AssureStartDateBeforeEndDate();
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
-        AssureNoOverlapping(existingBookings);
+        AssureNoOverlapping(bookingDomainService.GetOtherBookings(this));
     }
     protected void AssureStartDateBeforeEndDate()
     {
@@ -50,5 +48,20 @@ public class Booking : DomainEntity
                 (StartDate >= other.StartDate && StartDate <= other.EndDate) ||
                 (StartDate <= other.StartDate && EndDate >= other.EndDate)))
             throw new Exception("Booking overlapper med en anden booking");
+    }
+
+    public static Booking Create(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
+    {
+        return new Booking(startDate, endDate, existingBookings);
+    }
+
+    public void Update(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
+    {
+        StartDate = startDate;
+        EndDate = endDate;
+
+        AssureStartDateBeforeEndDate();
+        AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
+        AssureNoOverlapping(existingBookings);
     }
 }

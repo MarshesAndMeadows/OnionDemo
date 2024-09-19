@@ -1,28 +1,38 @@
-﻿
-using OnionDemo.Domain.DomainServices;
+﻿using OnionDemo.Domain.DomainServices;
 
 namespace OnionDemo.Domain.Entity
 {
     public class Accommodation : DomainEntity
     {
-        protected Accommodation(){}
+        private readonly List<Booking>? _bookings;
+        protected Accommodation() { }
 
-        private Accommodation (Host host)
+        protected Accommodation(Host host)
         {
             Host = host;
         }
-        public List<Booking> Bookings { get; private set; }
-        public Host Host { get; private set; }
+
+        public Host Host { get; protected set; }
+
+        public IReadOnlyCollection<Booking> Bookings => _bookings ?? new List<Booking>();
 
         public static Accommodation Create(Host host)
         {
             return new Accommodation(host);
         }
-        public void Update(Accommodation accommodation, byte[] rowVersion)
+
+        public void CreateBooking(DateOnly startDate, DateOnly endDate)
         {
-            Bookings = accommodation.Bookings;
-            Host = accommodation.Host;
+            var booking = Booking.Create(startDate, endDate, Bookings);
+            _bookings.Add(booking);
         }
 
+        public Booking UpdateBooking(int bookingId, DateOnly startDate, DateOnly endDate)
+        {
+            var booking = Bookings.FirstOrDefault(b => b.Id == bookingId);
+            if (booking == null) throw new ArgumentException("Booking not found");
+            booking.Update(startDate, endDate, Bookings);
+            return booking;
+        }
     }
 }

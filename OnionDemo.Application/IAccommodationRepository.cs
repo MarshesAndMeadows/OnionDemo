@@ -10,12 +10,7 @@ namespace OnionDemo.Application
     public interface IAccommodationRepository
     {
         Accommodation GetAccommodation(int id);
-        void AddAccommodation(Accommodation accommodation);
-        void UpdateAccommodation(Accommodation accommodation, byte[] rowversion);
-        void DeleteAccommodation(Accommodation accommodation, byte[] rowversion);
-        Booking GetBooking(int id);
-        void AddBooking(Booking booking);
+        void AddBooking(Accommodation accommodation);
         void UpdateBooking(Booking booking, byte[] rowversion);
-        void DeleteBooking(Booking booking, byte[] rowversion);
     }
 }

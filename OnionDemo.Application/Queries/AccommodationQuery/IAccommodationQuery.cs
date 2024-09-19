@@ -1,6 +1,4 @@
-﻿using OnionDemo.Application.AccommodationQuery.QueryDTO;
-
-namespace OnionDemo.Application.AccommodationQuery
+﻿namespace OnionDemo.Application.Queries.AccommodationQuery
 {
     public interface IAccommodationQuery
     {

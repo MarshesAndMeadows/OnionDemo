@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OnionDemo.Application.AccommodationQuery;
-using OnionDemo.Application.AccommodationQuery.QueryDTO;
+using OnionDemo.Application.Queries.AccommodationQuery;
 
 namespace OnionDemo.Infrastructure.Queries
 {

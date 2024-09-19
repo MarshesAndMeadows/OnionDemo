@@ -1,7 +1,4 @@
-﻿using OnionDemo.Application.Query.QueryDTO;
-
-
-namespace OnionDemo.Application.Query
+﻿namespace OnionDemo.Application.Queries.BookingQuery
 {
     public interface IBookingQuery
     {

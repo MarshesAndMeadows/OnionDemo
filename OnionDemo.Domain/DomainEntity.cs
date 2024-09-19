@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Domain.Entity
+namespace OnionDemo.Domain
 {
     public abstract class DomainEntity
     {
