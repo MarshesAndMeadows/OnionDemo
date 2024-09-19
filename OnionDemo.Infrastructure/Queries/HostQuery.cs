@@ -32,7 +32,7 @@ namespace OnionDemo.Infrastructure.Queries
             var result = _db.Hosts.AsNoTracking().
                 Select(a => new HostDto
                 {
-                    Id = a.Id
+                    Id = a.Id,
                 });
             return result;
         }

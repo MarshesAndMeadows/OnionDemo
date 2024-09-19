@@ -1,15 +1,14 @@
-﻿using OnionDemo.Application.Command.CommandDTO;
-using OnionDemo.Application.Command;
+﻿using OnionDemo.Application.Command;
 using OnionDemo.Application.Helpers;
 using OnionDemo.Domain.DomainServices;
 using OnionDemo.Domain.Entity;
 using OnionDemo.Application.AccommodationCommand.CommandDTO;
+using OnionDemo.Application.HostQuery;
 
 namespace OnionDemo.Application.Command
 {
     public class AccommodationCommand : IAccommodationCommand
     {
-
         private readonly IUnitOfWork _unitOfWork;
         private readonly IAccommodationRepository _repository;
 
@@ -19,7 +18,9 @@ namespace OnionDemo.Application.Command
             _unitOfWork = unitOfWork;
         }
 
-        public AccommodationCommand(){}
+        public AccommodationCommand()
+        {
+        }
 
         public void CreateAccommodation(CreateAccommodationDto createAccommodationDto)
         {
@@ -27,14 +28,14 @@ namespace OnionDemo.Application.Command
             {
                 _unitOfWork.BeginTransaction();
                 //Load
-                var host = new Host(createAccommodationDto.Host.Id);
+                var host = Host.GetHost(createAccommodationDto.Host.Id);
 
                 // Do
-                var accommodation = Accommodation.Create(new List<Booking>(),host);
+                var accommodation = Accommodation.Create(host);
 
                 // Save
                 _repository.AddAccommodation(accommodation);
-                
+
                 _unitOfWork.Commit();
             }
             catch (Exception)
@@ -74,6 +75,59 @@ namespace OnionDemo.Application.Command
                 _unitOfWork.Rollback();
                 throw;
             }
+        }
+
+        void IAccommodationCommand.CreateBooking(CreateBookingDto bookingDto)
+        {
+            try
+            {
+                _unitOfWork.BeginTransaction();
+
+                // Do
+                var booking = Booking.Create(bookingDto.StartDate, bookingDto.EndDate);
+
+                // Save
+                _repository.AddBooking(booking);
+
+                _unitOfWork.Commit();
+            }
+            catch (Exception)
+            {
+                _unitOfWork.Rollback();
+                throw;
+            }
+        }
+
+        void IAccommodationCommand.UpdateBooking(UpdateBookingDto updateBookingDto)
+        {
+            try
+            {
+                _unitOfWork.BeginTransaction();
+
+                // Load
+                var booking = _repository.GetBooking(updateBookingDto.Id);
+
+                // Do
+                booking.Update(updateBookingDto.StartDate, updateBookingDto.EndDate, existingBookings);
+
+                // Save
+                _repository.UpdateBooking(booking, updateBookingDto.RowVersion);
+
+                _unitOfWork.Commit();
+            }
+            catch (Exception)
+            {
+                _unitOfWork.Rollback();
+                throw;
+            }
+        }
+
+        void IAccommodationCommand.DeleteBooking(DeleteBookingDto deleteBookingDto)
+        {
+            // Load
+            var booking = _repository.GetBooking(deleteBookingDto.Id);
+            // Save
+            _repository.DeleteBooking(booking, deleteBookingDto.RowVersion);
         }
     }
 }

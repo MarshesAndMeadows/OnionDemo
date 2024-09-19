@@ -3,7 +3,6 @@ using OnionDemo.Application;
 using OnionDemo.Application.AccommodationCommand;
 using OnionDemo.Application.AccommodationCommand.CommandDTO;
 using OnionDemo.Application.Command;
-using OnionDemo.Application.Command.CommandDTO;
 using OnionDemo.Application.Query;
 using OnionDemo.Infrastructure;
 

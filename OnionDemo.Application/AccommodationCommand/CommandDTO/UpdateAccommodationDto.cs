@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OnionDemo.Application.HostQuery;
 
 namespace OnionDemo.Application.AccommodationCommand.CommandDTO
 {
@@ -12,7 +13,7 @@ namespace OnionDemo.Application.AccommodationCommand.CommandDTO
     {
         public int Id { get; set; }
         public List<BookingDto> Bookings { get; set; }
-        public Host Host { get; set; }
+        public int HostId { get; set; }
         public byte[] RowVersion { get; set; }
     }
 }

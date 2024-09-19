@@ -10,7 +10,6 @@ namespace OnionDemo.Application.HostQuery
     public class HostDto
     {
         public int Id { get; set; }
-
         public byte[] RowVersion { get; set; }
     }
 }

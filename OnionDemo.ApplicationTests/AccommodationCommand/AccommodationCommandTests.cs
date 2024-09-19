@@ -89,5 +89,25 @@ namespace OnionDemo.Application.AccommodationCommand.Tests
         {
             throw new NotImplementedException();
         }
+
+        Booking IAccommodationRepository.GetBooking(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAccommodationRepository.AddBooking(Booking booking)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAccommodationRepository.UpdateBooking(Booking booking, byte[] rowversion)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IAccommodationRepository.DeleteBooking(Booking booking, byte[] rowversion)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

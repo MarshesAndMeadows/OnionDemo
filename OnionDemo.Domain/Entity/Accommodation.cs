@@ -7,22 +7,22 @@ namespace OnionDemo.Domain.Entity
     {
         protected Accommodation(){}
 
-        private Accommodation(List<Booking> bookings, Host host)
+        private Accommodation (Host host)
         {
-            Bookings = bookings;
             Host = host;
         }
         public List<Booking> Bookings { get; private set; }
         public Host Host { get; private set; }
 
-        public static Accommodation Create(List<Booking> bookings, Host host)
+        public static Accommodation Create(Host host)
         {
-            return new Accommodation(bookings, host);
+            return new Accommodation(host);
         }
         public void Update(Accommodation accommodation, byte[] rowVersion)
         {
             Bookings = accommodation.Bookings;
             Host = accommodation.Host;
         }
+
     }
 }
