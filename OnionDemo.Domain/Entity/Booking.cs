@@ -1,5 +1,4 @@
-﻿using OnionDemo.Domain.DomainServices;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OnionDemo.Domain.Entity;
 public class Booking : DomainEntity
@@ -20,16 +19,16 @@ public class Booking : DomainEntity
 
     public DateOnly StartDate { get; protected set; }
     public DateOnly EndDate { get; protected set; }
+    public Review? Review { get; protected set; }
 
-
-    public void Update(DateOnly startDate, DateOnly endDate, IBookingDomainService bookingDomainService)
+    public void Update(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
     {
         StartDate = startDate;
         EndDate = endDate;
 
         AssureStartDateBeforeEndDate();
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
-        AssureNoOverlapping(bookingDomainService.GetOtherBookings(this));
+        AssureNoOverlapping(existingBookings);
     }
     protected void AssureStartDateBeforeEndDate()
     {
@@ -55,10 +54,11 @@ public class Booking : DomainEntity
         return new Booking(startDate, endDate, existingBookings);
     }
 
-    public void Update(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
+    public void Update(DateOnly startDate, DateOnly endDate, Review? review, IEnumerable<Booking> existingBookings)
     {
         StartDate = startDate;
         EndDate = endDate;
+        Review = review;
 
         AssureStartDateBeforeEndDate();
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));

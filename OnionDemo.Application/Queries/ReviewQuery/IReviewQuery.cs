@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Application.Queries.HostQuery
+namespace OnionDemo.Application.Queries.ReviewQuery
 {
-    public interface IHostQuery
+    public interface IReviewQuery
     {
-        HostDto? GetAccommodations(int hostId);
+        ReviewDto Get(int Id);
+
     }
 }

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Application.Queries.HostQuery
+namespace OnionDemo.Application.Commands.CommandDTO.Review
 {
-    public interface IHostQuery
+    public record UpdateReviewDto
     {
-        HostDto? GetAccommodations(int hostId);
     }
 }

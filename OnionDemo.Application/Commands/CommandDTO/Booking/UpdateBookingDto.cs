@@ -5,7 +5,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Application.Commands.AccommodationCommand.CommandDTO
+namespace OnionDemo.Application.Commands.CommandDTO.Booking
 {
     public record UpdateBookingDto
     {
@@ -14,5 +14,6 @@ namespace OnionDemo.Application.Commands.AccommodationCommand.CommandDTO
         public DateOnly EndDate { get; set; }
         public int AccommodationId { get; internal set; }
         public byte[] RowVersion { get; set; }
+        public int reviewId { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿/*using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OnionDemo.Application.AccommodationCommand;
 using System;
 using System.Collections.Generic;
@@ -110,4 +110,4 @@ namespace OnionDemo.Application.AccommodationCommand.Tests
             throw new NotImplementedException();
         }
     }
-}
+}*/

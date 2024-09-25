@@ -2,9 +2,9 @@
 {
     public interface IBookingQuery
     {
-        BookingDto GetBooking(int id);
+        BookingDto GetBooking(int accommodationId, int bookingId);
 
-        IEnumerable<BookingDto> GetBookings();
+        IEnumerable<BookingDto> GetBookings(int accommodationId);
     }
 
 }

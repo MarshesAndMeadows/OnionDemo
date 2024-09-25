@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OnionDemo.Domain.Entity;
 
-namespace OnionDemo.Application.Queries.HostQuery
+namespace OnionDemo.Application
 {
-    public interface IHostQuery
+    public interface IReviewRepository
     {
-        HostDto? GetAccommodations(int hostId);
+        Review Get(int id);
     }
 }

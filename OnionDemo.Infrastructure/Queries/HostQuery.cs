@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using OnionDemo.Application.Queries.AccommodationQuery;
+using OnionDemo.Application.Queries.BookingQuery;
 using OnionDemo.Application.Queries.HostQuery;
-using OnionDemo.Application.Query.QueryDTO;
 
 namespace OnionDemo.Infrastructure.Queries
 {
@@ -20,39 +21,29 @@ namespace OnionDemo.Infrastructure.Queries
 
         HostDto? IHostQuery.GetAccommodations(int hostId)
         {
-            var host = _db.Hosts.Include(a => a.Accommodations).ThenInclude(b => b.Bookings).FirstOrDefault(h => h.Id == hostId);
+            var host = _db.Hosts
+                .Include(a => a.Accommodations)
+                .ThenInclude(b => b.Bookings)
+                .FirstOrDefault(h => h.Id == hostId);
+
             if (host == null) return null;
+
             return new HostDto
             {
                 Id = host.Id,
-                Accommodations = host.Accommodations.Select(a=> new BookingDto
-                {
-                    Id = b.Id,
-                    StartDate = b.StartDate,
-                    EndDate = b.EndDate,
-                    RowVersion = b.RowVersion
-                })
-            }
-        }
-
-        HostDto IHostQuery.GetHost(int id)
-        {
-            var host = _db.Hosts.AsNoTracking().Single(a => a.Id == id);
-            return new HostDto
-            {
-                Id = host.Id,
-                RowVersion = host.RowVersion
-            };
-        }
-
-        IEnumerable<HostDto> IHostQuery.GetHosts()
-        {
-            var result = _db.Hosts.AsNoTracking().
-                Select(a => new HostDto
+                Accommodations = host.Accommodations.Select(a => new AccommodationDTO
                 {
                     Id = a.Id,
-                });
-            return result;
+                    HostId = a.Host.Id,
+                    Bookings = a.Bookings.Select(b => new BookingDto
+                    {
+                        Id = b.Id,
+                        StartDate = b.StartDate,
+                        EndDate = b.EndDate,
+                        RowVersion = b.RowVersion
+                    })
+                })
+            };
         }
     }
 }

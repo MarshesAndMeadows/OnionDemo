@@ -1,5 +1,4 @@
-﻿using OnionDemo.Domain.DomainServices;
-
+﻿
 namespace OnionDemo.Domain.Entity
 {
     public class Accommodation : DomainEntity
@@ -14,7 +13,7 @@ namespace OnionDemo.Domain.Entity
 
         public Host Host { get; protected set; }
 
-        public IReadOnlyCollection<Booking> Bookings => _bookings ?? new List<Booking>();
+        public IReadOnlyCollection<Booking> Bookings => _bookings;
 
         public static Accommodation Create(Host host)
         {
@@ -27,11 +26,11 @@ namespace OnionDemo.Domain.Entity
             _bookings.Add(booking);
         }
 
-        public Booking UpdateBooking(int bookingId, DateOnly startDate, DateOnly endDate)
+        public Booking UpdateBooking(int bookingId, DateOnly startDate, DateOnly endDate, Review review)
         {
             var booking = Bookings.FirstOrDefault(b => b.Id == bookingId);
             if (booking == null) throw new ArgumentException("Booking not found");
-            booking.Update(startDate, endDate, Bookings);
+            booking.Update(startDate, endDate, review, Bookings);
             return booking;
         }
     }

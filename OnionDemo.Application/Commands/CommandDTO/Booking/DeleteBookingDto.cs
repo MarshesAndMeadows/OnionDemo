@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Application.Queries.HostQuery
+namespace OnionDemo.Application.Commands.CommandDTO.Booking
 {
-    public interface IHostQuery
+    public record DeleteBookingDto
     {
-        HostDto? GetAccommodations(int hostId);
     }
+
 }

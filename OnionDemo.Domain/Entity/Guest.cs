@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Application.Commands.AccommodationCommand.CommandDTO
+namespace OnionDemo.Domain.Entity
 {
-    public record DeleteBookingDto
+    public class Guest : DomainEntity
     {
-    }
 
+    }
 }
