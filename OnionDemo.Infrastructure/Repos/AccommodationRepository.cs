@@ -9,39 +9,31 @@ using Microsoft.EntityFrameworkCore;
 
 namespace OnionDemo.Infrastructure.Repos
 {
-    public class AccommodationRepository : IAccommodationRepository
+    public class AccommodationRepository(BookMyHomeContext context) : IAccommodationRepository
     {
-        private readonly BookMyHomeContext _db;
-
-        public AccommodationRepository(BookMyHomeContext context)
-        {
-            _db = context;
-        }
-
         void IAccommodationRepository.Add(Accommodation accommodation)
         {
-            _db.Accommodations.Add(accommodation);
-            _db.SaveChanges();
+            context.Accommodations.Add(accommodation);
+            context.SaveChanges();
         }
-
         void IAccommodationRepository.AddBooking(Accommodation accommodation)
         {
-            _db.SaveChanges();
+            context.SaveChanges();
         }
-
-
         Accommodation IAccommodationRepository.GetAccommodation(int id)
         {
-            return _db.Accommodations.Include(a => a.Bookings).Single(a => a.Id == id);
+            return context.Accommodations.Include(a => a.Bookings).Single(a => a.Id == id);
         }
-
         void IAccommodationRepository.UpdateBooking(Booking booking, byte[] rowversion)
         {
-            _db.Entry(booking).Property(nameof(booking.RowVersion)).OriginalValue = rowversion;
-            _db.SaveChanges();
+            context.Entry(booking).Property(nameof(booking.RowVersion)).OriginalValue = rowversion;
+            context.SaveChanges();
         }
 
-
+        Booking IAccommodationRepository.GetBooking(int id)
+        {
+            return context.Bookings.Where(a => a.Id == id).Single();
+        }
         /*
                 void IAccommodationRepository.Update(Accommodation accommodation, byte[] rowVersion)
                 {

@@ -1,25 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 
 namespace OnionDemo.Domain.Entity
 {
-    public class Review : DomainEntity
+    public class Review(int rating, string blurb) : DomainEntity
     {
-        private Booking Booking { get; set; }
-        private int Rating { get; set; }
-        private string Blurb { get; set; }
-
-        void Create(int bookingId, int rating, string blurb)
+        [Range(0, 100, ErrorMessage = "Value must be between 100 and 0.")]
+        public int Rating { get; set; } = rating;
+        public string Blurb { get; set; } = blurb;
+        public static Review Create(int rating, string blurb)
         {
-            //create new rating, find the booking, attach review to the booking.
-
-            var booking = _db.Bookings.Single(a => a.Id == bookingId);
-            var review = new Review(booking, rating, blurb);
+            return new Review(rating, blurb);
         }
-
     }
 }

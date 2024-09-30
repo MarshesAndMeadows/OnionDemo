@@ -9,17 +9,11 @@ using System.Data;
 
 namespace OnionDemo.Infrastructure.Repos
 {
-    public class HostRepository : IHostRepository
+    public class HostRepository(BookMyHomeContext db) : IHostRepository
     {
-        private readonly BookMyHomeContext _db;
-        public HostRepository(BookMyHomeContext db)
-        {
-            _db = db;
-
-        }
         Host IHostRepository.Get(int id)
         {
-            return _db.Hosts.Single(a => a.Id == id);
+            return db.Hosts.Single(a => a.Id == id);
         }
     }
 }

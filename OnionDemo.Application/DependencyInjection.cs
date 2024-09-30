@@ -8,6 +8,7 @@ public static class ServiceCollectionExtension
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         services.AddScoped<IAccommodationCommand, AccommodationCommand>();
+        services.AddScoped<IReviewCommand, ReviewCommand>();
         return services;
     }
 }

@@ -48,6 +48,11 @@ public class Booking : DomainEntity
                 (StartDate <= other.StartDate && EndDate >= other.EndDate)))
             throw new Exception("Booking overlapper med en anden booking");
     }
+    protected void AssureBookingMustBeInPast(DateOnly now)
+    {
+        if (StartDate >= now)
+            throw new ArgumentException("Booking skal være i fortiden.");
+    }
 
     public static Booking Create(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
     {
@@ -63,5 +68,19 @@ public class Booking : DomainEntity
         AssureStartDateBeforeEndDate();
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(existingBookings);
+    }
+
+    public void AddReview(Review review)
+    {
+        AssureBookingMustBeInPast(DateOnly.FromDateTime(DateTime.Now));
+        try
+        {
+            Review = review;
+            
+        }
+        catch (Exception e)
+        {
+            throw new ArgumentException("Rating value must be between 0 and 100.");
+        }
     }
 }

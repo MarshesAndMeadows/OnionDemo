@@ -1,5 +1,4 @@
-﻿using OnionDemo.Domain.DomainServices;
-using OnionDemo.Domain.Entity;
+﻿using OnionDemo.Domain.Entity;
 
 namespace OnionDemo.Domain.Test.Fakes
 {

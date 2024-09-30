@@ -8,5 +8,9 @@ namespace OnionDemo.Application.Commands.CommandDTO.Review
 {
     public record CreateReviewDto
     {
+        public int Id { get; set; }
+        public int Rating { get; set; }
+        public string Blurb { get; set; }
+        public int BookingId { get; set; }
     }
 }

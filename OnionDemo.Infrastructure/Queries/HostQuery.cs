@@ -10,18 +10,11 @@ using OnionDemo.Application.Queries.HostQuery;
 
 namespace OnionDemo.Infrastructure.Queries
 {
-    public class HostQuery : IHostQuery
+    public class HostQuery(BookMyHomeContext db) : IHostQuery
     {
-        private readonly BookMyHomeContext _db;
-
-        public HostQuery(BookMyHomeContext db)
-        {
-            _db = db;
-        }
-
         HostDto? IHostQuery.GetAccommodations(int hostId)
         {
-            var host = _db.Hosts
+            var host = db.Hosts
                 .Include(a => a.Accommodations)
                 .ThenInclude(b => b.Bookings)
                 .FirstOrDefault(h => h.Id == hostId);

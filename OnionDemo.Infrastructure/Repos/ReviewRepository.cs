@@ -9,18 +9,18 @@ using OnionDemo.Domain.Entity;
 
 namespace OnionDemo.Infrastructure.Repos
 {
-    public class ReviewRepository : IReviewRepository
+    public class ReviewRepository(BookMyHomeContext db) : IReviewRepository
     {
-        private readonly BookMyHomeContext _db;
-        public ReviewRepository(BookMyHomeContext db)
-        {
-            _db = db;
-        }
         Review IReviewRepository.Get(int id)
         {
-            return _db.Reviews.Single(a => a.Id == id);
+            return db.Reviews.Single(a => a.Id == id);
         }
 
+        void IReviewRepository.AddReview(Review review)
+        {
+            db.Reviews.Add(review);
+            db.SaveChanges();
+        }
 
     }
 }

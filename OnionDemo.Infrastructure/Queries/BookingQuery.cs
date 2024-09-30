@@ -9,19 +9,13 @@ using OnionDemo.Domain.Entity;
 
 namespace OnionDemo.Infrastructure.Queries
 {
-    public class BookingQuery : IBookingQuery
+    public class BookingQuery(BookMyHomeContext db) : IBookingQuery
     {
-        private readonly BookMyHomeContext _db;
-
-        public BookingQuery(BookMyHomeContext db)
-        {
-            _db = db;
-        }
         BookingDto IBookingQuery.GetBooking(int accommodationId,int bookingId)
         {
-            var accommodation = _db.Accommodations.Include(b => b.Bookings).AsNoTracking()
+            var accommodation = db.Accommodations.Include(b => b.Bookings).AsNoTracking()
                 .Single(a => a.Id == accommodationId);
-            var booking = _db.Bookings.AsNoTracking().Single(b => b.Id == bookingId);
+            var booking = db.Bookings.AsNoTracking().Single(b => b.Id == bookingId);
             
             
             return new BookingDto
@@ -36,9 +30,9 @@ namespace OnionDemo.Infrastructure.Queries
 
         IEnumerable<BookingDto> IBookingQuery.GetBookings(int accommodationId)
         {
-            var accommodation = _db.Accommodations.Include(b => b.Bookings).AsNoTracking()
+            var accommodation = db.Accommodations.Include(b => b.Bookings).AsNoTracking()
                 .Single(a => a.Id == accommodationId);
-            var result = _db.Bookings.AsNoTracking().Select(a => new BookingDto
+            var result = db.Bookings.AsNoTracking().Select(a => new BookingDto
             {
                 Id = a.Id,
                 StartDate = a.StartDate,

@@ -10,5 +10,7 @@ namespace OnionDemo.Application
     public interface IReviewRepository
     {
         Review Get(int id);
+        void AddReview(Review review);
+
     }
 }
