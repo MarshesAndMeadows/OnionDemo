@@ -13,8 +13,8 @@ namespace OnionDemo.Domain.Entity
     public class Review(int rating, string blurb) : DomainEntity
     {
         [Range(0, 100, ErrorMessage = "Value must be between 100 and 0.")]
-        public int Rating { get; set; } = rating;
-        public string Blurb { get; set; } = blurb;
+        public int Rating { get; protected set; } = rating;
+        public string Blurb { get; protected set; } = blurb;
         public static Review Create(int rating, string blurb)
         {
             return new Review(rating, blurb);

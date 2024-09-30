@@ -13,6 +13,8 @@ namespace OnionDemo.Domain.Entity
 
         public Host Host { get; protected set; }
 
+        public string Address { get; protected set; }
+
         public IReadOnlyCollection<Booking> Bookings => _bookings;
 
         public static Accommodation Create(Host host)
@@ -20,7 +22,7 @@ namespace OnionDemo.Domain.Entity
             return new Accommodation(host);
         }
 
-        public void CreateBooking(DateOnly startDate, DateOnly endDate)
+        public void AddBooking(DateOnly startDate, DateOnly endDate)
         {
             var booking = Booking.Create(startDate, endDate, Bookings);
             _bookings.Add(booking);
@@ -31,6 +33,13 @@ namespace OnionDemo.Domain.Entity
             var booking = Bookings.FirstOrDefault(b => b.Id == bookingId);
             if (booking == null) throw new ArgumentException("Booking not found");
             booking.Update(startDate, endDate, review, Bookings);
+            return booking;
+        }
+        public Booking UpdateBooking(int bookingId, DateOnly startDate, DateOnly endDate)
+        {
+            var booking = Bookings.FirstOrDefault(b => b.Id == bookingId);
+            if (booking == null) throw new ArgumentException("Booking not found");
+            booking.Update(startDate, endDate, Bookings);
             return booking;
         }
     }

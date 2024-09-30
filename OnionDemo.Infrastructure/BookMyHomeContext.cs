@@ -9,6 +9,6 @@ namespace OnionDemo.Infrastructure
         public DbSet<Accommodation> Accommodations { get; set; }
         public DbSet<Host> Hosts { get; set; }
         public DbSet<Review> Reviews { get; set; }
-
+        public DbSet<Guest> Guests { get; set; }
     }
 }

@@ -20,6 +20,7 @@ public class Booking : DomainEntity
     public DateOnly StartDate { get; protected set; }
     public DateOnly EndDate { get; protected set; }
     public Review? Review { get; protected set; }
+    public Guest Guest { get; protected set; }
 
     public void Update(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
     {
