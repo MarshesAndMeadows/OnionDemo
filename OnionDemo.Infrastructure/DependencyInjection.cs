@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using OnionDemo.Application;
 using OnionDemo.Application.Helpers;
 using OnionDemo.Application.Queries.BookingQuery;
+using OnionDemo.Application.Queries.GuestQuery;
 using OnionDemo.Application.Queries.HostQuery;
 using OnionDemo.Application.Queries.ReviewQuery;
 using OnionDemo.Infrastructure.Queries;
@@ -18,10 +19,12 @@ public static class ServiceCollectionExtension
         services.AddScoped<IHostQuery, HostQuery>();
         services.AddScoped<IBookingQuery, BookingQuery>();
         services.AddScoped<IReviewQuery, ReviewQuery>();
-        services.AddScoped<IAccommodationRepository, AccommodationRepository>();
+        services.AddScoped<IGuestQuery, GuestQuery>();
         services.AddScoped<IUnitOfWork, UnitOfWork<BookMyHomeContext>>();
+        services.AddScoped<IAccommodationRepository, AccommodationRepository>();
         services.AddScoped<IHostRepository, HostRepository>();
         services.AddScoped<IReviewRepository, ReviewRepository>();
+        services.AddScoped<IGuestRepository, GuestRepository>();
 
         // Database
         // https://github.com/dotnet/SqlClient/issues/2239
