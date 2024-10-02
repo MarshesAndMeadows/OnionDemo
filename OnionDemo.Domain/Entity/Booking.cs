@@ -16,7 +16,6 @@ public class Booking : DomainEntity
         AssureNoOverlapping(existingBookings);
     }
 
-
     public DateOnly StartDate { get; protected set; }
     public DateOnly EndDate { get; protected set; }
     public Review? Review { get; protected set; }

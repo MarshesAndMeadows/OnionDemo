@@ -5,12 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using OnionDemo.Domain.Entity;
 
-namespace OnionDemo.Application
+namespace OnionDemo.Application.Interfaces
 {
-    public interface IReviewRepository
+    public interface IHostRepository
     {
-        Review Get(int id);
-        void AddReview(Review review);
-
+        Host Get(int id);
     }
 }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OnionDemo.Domain.Entity;
 
-namespace OnionDemo.Application
+namespace OnionDemo.Application.Interfaces
 {
-    public interface IGuestRepository
+    public interface AddressInterface
     {
-        Guest Get(int id);
+        void ValidateAddress()
+        {
+
+        }
     }
 }

@@ -12,6 +12,15 @@ namespace OnionDemo.Domain.Entity
 
         protected Guest() { }
 
+        private Guest(List<Booking> bookings)
+        {
+            _bookings = bookings;
+        }
         public IReadOnlyCollection<Booking> Bookings => _bookings;
+
+        public static Guest Create()
+        {
+            return new Guest(); 
+        }
     }
 }

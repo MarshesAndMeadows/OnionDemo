@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OnionDemo.Application.Queries.ReviewQuery;
 using OnionDemo.Domain.Entity;
 
 namespace OnionDemo.Infrastructure.Queries
@@ -24,6 +25,11 @@ namespace OnionDemo.Infrastructure.Queries
                 StartDate = booking.StartDate,
                 EndDate = booking.EndDate,
                 AccommodationId = accommodation.Id,
+                Review = new ReviewDto()
+                {
+                    Blurb = booking.Review.Blurb,
+                    Rating = booking.Review.Rating
+                },
                 RowVersion = booking.RowVersion
             };
         }
@@ -32,13 +38,18 @@ namespace OnionDemo.Infrastructure.Queries
         {
             var accommodation = db.Accommodations.Include(b => b.Bookings).AsNoTracking()
                 .Single(a => a.Id == accommodationId);
-            var result = db.Bookings.AsNoTracking().Select(a => new BookingDto
+            var result = db.Bookings.AsNoTracking().Select(booking => new BookingDto
             {
-                Id = a.Id,
-                StartDate = a.StartDate,
-                EndDate = a.EndDate,
+                Id = booking.Id,
+                StartDate = booking.StartDate,
+                EndDate = booking.EndDate,
                 AccommodationId = accommodation.Id,
-                RowVersion = a.RowVersion
+                Review = new ReviewDto()
+                {
+                    Blurb = booking.Review.Blurb,
+                    Rating = booking.Review.Rating
+                },
+                RowVersion = booking.RowVersion
             });
             return result;
         }

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OnionDemo.Application;
 using OnionDemo.Application.Helpers;
+using OnionDemo.Application.Interfaces;
 using OnionDemo.Application.Queries.BookingQuery;
 using OnionDemo.Application.Queries.GuestQuery;
 using OnionDemo.Application.Queries.HostQuery;

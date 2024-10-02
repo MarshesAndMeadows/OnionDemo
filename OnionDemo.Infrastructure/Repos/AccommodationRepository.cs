@@ -1,11 +1,11 @@
-﻿using OnionDemo.Application;
-using OnionDemo.Domain.Entity;
+﻿using OnionDemo.Domain.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using OnionDemo.Application.Interfaces;
 
 namespace OnionDemo.Infrastructure.Repos
 {

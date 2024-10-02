@@ -3,6 +3,7 @@ using OnionDemo.Domain.Entity;
 using OnionDemo.Application.Queries.BookingQuery;
 using OnionDemo.Application.Commands.CommandDTO.Accommodation;
 using OnionDemo.Application.Commands.CommandDTO.Booking;
+using OnionDemo.Application.Interfaces;
 
 namespace OnionDemo.Application.Commands
 {

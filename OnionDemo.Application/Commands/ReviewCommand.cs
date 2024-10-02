@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using OnionDemo.Application.Commands.CommandDTO.Review;
 using OnionDemo.Application.Helpers;
 using OnionDemo.Application.Queries.BookingQuery;
+using OnionDemo.Application.Interfaces;
 
 namespace OnionDemo.Application.Commands
 {

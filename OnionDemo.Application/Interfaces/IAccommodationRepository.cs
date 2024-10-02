@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionDemo.Application
+namespace OnionDemo.Application.Interfaces
 {
     public interface IAccommodationRepository
     {

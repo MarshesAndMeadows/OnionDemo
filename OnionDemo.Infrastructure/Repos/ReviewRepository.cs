@@ -1,11 +1,11 @@
-﻿using OnionDemo.Application;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OnionDemo.Application.Queries.BookingQuery;
 using OnionDemo.Domain.Entity;
+using OnionDemo.Application.Interfaces;
 
 namespace OnionDemo.Infrastructure.Repos
 {

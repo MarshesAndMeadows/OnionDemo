@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using OnionDemo.Application.Queries.AccommodationQuery;
 using OnionDemo.Application.Queries.BookingQuery;
 using OnionDemo.Application.Queries.HostQuery;
+using OnionDemo.Application.Queries.ReviewQuery;
+using OnionDemo.Domain.Entity;
 
 namespace OnionDemo.Infrastructure.Queries
 {
@@ -16,7 +18,7 @@ namespace OnionDemo.Infrastructure.Queries
         {
             var host = db.Hosts
                 .Include(a => a.Accommodations)
-                .ThenInclude(b => b.Bookings)
+                .ThenInclude(a => a.Bookings)
                 .FirstOrDefault(h => h.Id == hostId);
 
             if (host == null) return null;
@@ -33,7 +35,13 @@ namespace OnionDemo.Infrastructure.Queries
                         Id = b.Id,
                         StartDate = b.StartDate,
                         EndDate = b.EndDate,
-                        RowVersion = b.RowVersion
+                        RowVersion = b.RowVersion,
+                        Review = new ReviewDto()
+                        {
+                            Blurb = b.Review.Blurb,
+                            Rating = b.Review.Rating
+                        },
+                        AccommodationId = a.Id,
                     })
                 })
             };

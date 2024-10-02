@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionDemo.DatabaseMigration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnionDemo.ApplicationTests", "OnionDemo.ApplicationTests\OnionDemo.ApplicationTests.csproj", "{921E1CEF-51A2-4556-8069-899A98F22E67}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{52DAFFFC-37B9-46EC-A81A-7373BAE2112D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{8CE47A58-76FE-416F-8E43-1BA646BFB021}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +58,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BF35640-4767-4A09-8AE9-2C7CB9BAFEE8} = {52DAFFFC-37B9-46EC-A81A-7373BAE2112D}
+		{23E0FC97-92F7-4B7F-A92B-1685ECD1D87C} = {8CE47A58-76FE-416F-8E43-1BA646BFB021}
+		{921E1CEF-51A2-4556-8069-899A98F22E67} = {52DAFFFC-37B9-46EC-A81A-7373BAE2112D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75D60626-B005-4002-B4E0-5E1ACBF738EA}
 	EndGlobalSection
 EndGlobal

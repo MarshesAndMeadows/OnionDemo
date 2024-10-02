@@ -3,6 +3,7 @@ using OnionDemo.Application.Queries.AccommodationQuery;
 using OnionDemo.Application.Queries.BookingQuery;
 using OnionDemo.Application.Queries.GuestQuery;
 using OnionDemo.Application.Queries.HostQuery;
+using OnionDemo.Application.Queries.ReviewQuery;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,11 @@ namespace OnionDemo.Infrastructure.Queries
                     Id = b.Id,
                     StartDate = b.StartDate,
                     EndDate = b.EndDate,
+                    Review = new ReviewDto()
+                    {
+                        Blurb = b.Review.Blurb,
+                        Rating = b.Review.Rating
+                    },
                     RowVersion = b.RowVersion
                 })
             };

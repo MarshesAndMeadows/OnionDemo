@@ -1,4 +1,6 @@
-﻿namespace OnionDemo.Domain.Entity
+﻿using System.Collections.Generic;
+
+namespace OnionDemo.Domain.Entity
 {
     public class Host : DomainEntity
     {
@@ -14,5 +16,10 @@
 
         public IReadOnlyCollection<Accommodation> Accommodations => _accommodations ?? [];
         public string Name { get; set; }
+
+        public static Host Create(string name)
+        {
+            return new Host(name, new List<Accommodation>());
+        }
     }
 }
