@@ -15,6 +15,6 @@ namespace OnionDemo.Application.Interfaces
         void Add(Accommodation accommodation);
         Booking GetBooking(int id);
 
-        void ValidateAddress(string address);
+        Task<bool> ValidateAddress(string address);
     }
 }

@@ -279,7 +279,6 @@ C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.GeneratedMSBuildE
 C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.AssemblyInfoInputs.cache
 C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.AssemblyInfo.cs
 C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.csproj.CoreCompileInputs.cache
-C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.sourcelink.json
 C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\scopedcss\bundle\OnionDemo.Api.styles.css

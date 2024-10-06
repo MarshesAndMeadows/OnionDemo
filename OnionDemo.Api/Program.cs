@@ -42,10 +42,7 @@ app.MapGet("/accommodation/{id}/booking", (int id, IBookingQuery query) => query
 app.MapGet("/accommodation/{accommodationId}/booking/{bookingId}", (int accommodationId, int bookingId, IBookingQuery query) => query.GetBooking(accommodationId, bookingId));
 app.MapPost("/accommodation/booking", (CreateBookingDto booking, IAccommodationCommand command) => command.CreateBooking(booking));
 app.MapPut("/accommodation/booking", (UpdateBookingDto booking, IAccommodationCommand command) => command.UpdateBooking(booking));
-app.MapPost("/accommodation",
-    (CreateAccommodationDto accommodation, IAccommodationCommand command) => command.Create(accommodation));
-
-
+app.MapPost("/accommodation", async (CreateAccommodationDto accommodation, IAccommodationCommand command) => command.Create(accommodation));
 
 app.MapPost("/review",(CreateReviewDto review, IReviewCommand command) => command.Create(review));
 

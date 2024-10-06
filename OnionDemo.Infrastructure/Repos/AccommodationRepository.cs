@@ -1,11 +1,10 @@
 ﻿using OnionDemo.Domain.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OnionDemo.Application.Interfaces;
+using System.Text.Json;
+using OnionDemo.Infrastructure.Proxy;
+using Microsoft.IdentityModel.Tokens;
+using System.Web;
 
 namespace OnionDemo.Infrastructure.Repos
 {
@@ -35,22 +34,21 @@ namespace OnionDemo.Infrastructure.Repos
             return context.Bookings.Where(a => a.Id == id).Single();
         }
 
-        void IAccommodationRepository.ValidateAddress(string address)
+        async Task<bool> IAccommodationRepository.ValidateAddress(string inputAddress)
         {
-            client.GetAsync($"https://api.dataforsyningen.dk/datavask/adresser?betegnelse={address}");
+            client.BaseAddress = new Uri("https://api.dataforsyningen.dk/");
+
+            string endpoint = "datavask/adresser";
+            string encodedAddress = HttpUtility.UrlEncode(inputAddress);
+            string url = $"{endpoint}?betegnelse={encodedAddress}";
+
+            var response = await client.GetAsync(url);
+            var result = await response.Content.ReadAsStreamAsync();
+            var adresseResponse = JsonSerializer.Deserialize<AddressResponse>(result);
+
+            // Access the first address and print its ID
+            var address = adresseResponse.Results.FirstOrDefault();
+            return (address.Address.Id != null);
         }
-        /*
-       void IAccommodationRepository.Update(Accommodation accommodation, byte[] rowVersion)
-       {
-           _db.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
-           _db.Accommodations.Update(accommodation);
-           _db.SaveChanges();
-       }
-       void IAccommodationRepository.Delete(Accommodation accommodation, byte[] rowVersion)
-       {
-           _db.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
-           _db.Accommodations.Remove(accommodation);
-           _db.SaveChanges();
-       }*/
     }
 }

@@ -21,50 +21,53 @@ namespace OnionDemo.Application.Commands
             _hostRepository = hostRepository;
             _reviewRepository = reviewRepository;
         }
-        
-                void IAccommodationCommand.Create(CreateAccommodationDto createDto)
-                {
-                    _repository.ValidateAddress(createDto.Address);
-                    var host = _hostRepository.Get(createDto.HostId);
-                    var accommodation = Accommodation.Create(host);
-                    _repository.Add(accommodation);
-                }
 
-                void IAccommodationCommand.Delete(DeleteAccommodationDto deleteAccommodationDto)
-                {
-                    throw new NotImplementedException();
-                    /*
-                    // Load
-                    var accommodation = _repository.GetAccommodation(deleteAccommodationDto.Id);
-                    // Save
-                    _repository.DeleteAccommodation(accommodation, deleteAccommodationDto.RowVersion);
-                    */
-                }
+        async void IAccommodationCommand.Create(CreateAccommodationDto createDto)
+        {
+            var addressExists = await _repository.ValidateAddress(createDto.Address);
+            if (addressExists)
+            {
+                var host = _hostRepository.Get(createDto.HostId);
+                var accommodation = Accommodation.Create(host);
+                _repository.Add(accommodation);
+            }
+        }
 
-                void IAccommodationCommand.Update(UpdateAccommodationDto updateAccommodationDto)
-                {
-                    throw new NotImplementedException();
-                    /*try
-                    {
-                        _uow.BeginTransaction();
+        void IAccommodationCommand.Delete(DeleteAccommodationDto deleteAccommodationDto)
+        {
+            throw new NotImplementedException();
+            /*
+            // Load
+            var accommodation = _repository.GetAccommodation(deleteAccommodationDto.Id);
+            // Save
+            _repository.DeleteAccommodation(accommodation, deleteAccommodationDto.RowVersion);
+            */
+        }
 
-                        // Load
-                        var accommodation = _repository.GetAccommodation(updateAccommodationDto.Id);
+        void IAccommodationCommand.Update(UpdateAccommodationDto updateAccommodationDto)
+        {
+            throw new NotImplementedException();
+            /*try
+            {
+                _uow.BeginTransaction();
 
-                        // Do
-                        accommodation.Update(accommodation, updateAccommodationDto.RowVersion);
+                // Load
+                var accommodation = _repository.GetAccommodation(updateAccommodationDto.Id);
 
-                        // Save
-                        _repository.UpdateAccommodation(accommodation, updateAccommodationDto.RowVersion);
+                // Do
+                accommodation.Update(accommodation, updateAccommodationDto.RowVersion);
 
-                        _uow.Commit();
-                    }
-                    catch (Exception)
-                    {
-                        _uow.Rollback();
-                        throw;
-                    }*/
-                }
+                // Save
+                _repository.UpdateAccommodation(accommodation, updateAccommodationDto.RowVersion);
+
+                _uow.Commit();
+            }
+            catch (Exception)
+            {
+                _uow.Rollback();
+                throw;
+            }*/
+        }
 
         void IAccommodationCommand.CreateBooking(CreateBookingDto bookingDto)
         {
