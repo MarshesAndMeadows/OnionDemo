@@ -22,9 +22,10 @@ namespace OnionDemo.Application.Commands
             _reviewRepository = reviewRepository;
         }
         
-                void IAccommodationCommand.Create(CreateAccommodationDto createAccommodationDto)
+                void IAccommodationCommand.Create(CreateAccommodationDto createDto)
                 {
-                    var host = _hostRepository.Get(createAccommodationDto.HostId);
+                    _repository.ValidateAddress(createDto.Address);
+                    var host = _hostRepository.Get(createDto.HostId);
                     var accommodation = Accommodation.Create(host);
                     _repository.Add(accommodation);
                 }

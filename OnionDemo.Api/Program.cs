@@ -20,7 +20,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
+builder.Services.AddHttpClient();
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -40,6 +44,8 @@ app.MapPost("/accommodation/booking", (CreateBookingDto booking, IAccommodationC
 app.MapPut("/accommodation/booking", (UpdateBookingDto booking, IAccommodationCommand command) => command.UpdateBooking(booking));
 app.MapPost("/accommodation",
     (CreateAccommodationDto accommodation, IAccommodationCommand command) => command.Create(accommodation));
+
+
 
 app.MapPost("/review",(CreateReviewDto review, IReviewCommand command) => command.Create(review));
 

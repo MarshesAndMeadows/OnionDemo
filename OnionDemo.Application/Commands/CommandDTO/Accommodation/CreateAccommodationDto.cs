@@ -8,6 +8,8 @@ namespace OnionDemo.Application.Commands.CommandDTO.Accommodation
 {
     public record CreateAccommodationDto
     {
-        public int HostId { get; init; }
+        public int HostId { get; set; }
+
+        public string Address { get; set; }
     }
 }

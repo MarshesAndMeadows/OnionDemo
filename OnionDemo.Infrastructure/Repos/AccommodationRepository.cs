@@ -9,7 +9,7 @@ using OnionDemo.Application.Interfaces;
 
 namespace OnionDemo.Infrastructure.Repos
 {
-    public class AccommodationRepository(BookMyHomeContext context) : IAccommodationRepository
+    public class AccommodationRepository(BookMyHomeContext context, HttpClient client) : IAccommodationRepository
     {
         void IAccommodationRepository.Add(Accommodation accommodation)
         {
@@ -34,18 +34,23 @@ namespace OnionDemo.Infrastructure.Repos
         {
             return context.Bookings.Where(a => a.Id == id).Single();
         }
+
+        void IAccommodationRepository.ValidateAddress(string address)
+        {
+            client.GetAsync($"https://api.dataforsyningen.dk/datavask/adresser?betegnelse={address}");
+        }
         /*
-                void IAccommodationRepository.Update(Accommodation accommodation, byte[] rowVersion)
-                {
-                    _db.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
-                    _db.Accommodations.Update(accommodation);
-                    _db.SaveChanges();
-                }
-                void IAccommodationRepository.Delete(Accommodation accommodation, byte[] rowVersion)
-                {
-                    _db.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
-                    _db.Accommodations.Remove(accommodation);
-                    _db.SaveChanges();
-                }*/
+       void IAccommodationRepository.Update(Accommodation accommodation, byte[] rowVersion)
+       {
+           _db.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
+           _db.Accommodations.Update(accommodation);
+           _db.SaveChanges();
+       }
+       void IAccommodationRepository.Delete(Accommodation accommodation, byte[] rowVersion)
+       {
+           _db.Entry(accommodation).Property(nameof(Accommodation.RowVersion)).OriginalValue = rowVersion;
+           _db.Accommodations.Remove(accommodation);
+           _db.SaveChanges();
+       }*/
     }
 }

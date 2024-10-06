@@ -1,5 +1,4 @@
-﻿
-namespace OnionDemo.Domain.Entity
+﻿namespace OnionDemo.Domain.Entity
 {
     public class Accommodation : DomainEntity
     {
