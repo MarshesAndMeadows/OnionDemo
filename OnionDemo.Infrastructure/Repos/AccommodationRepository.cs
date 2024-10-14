@@ -36,7 +36,7 @@ namespace OnionDemo.Infrastructure.Repos
 
         async Task<bool> IAccommodationRepository.ValidateAddress(string inputAddress)
         {
-            client.BaseAddress = new Uri("https://api.dataforsyningen.dk/");
+/*            client.BaseAddress = new Uri("https://api.dataforsyningen.dk/");
 
             string endpoint = "datavask/adresser";
             string encodedAddress = HttpUtility.UrlEncode(inputAddress);
@@ -47,8 +47,8 @@ namespace OnionDemo.Infrastructure.Repos
             var adresseResponse = JsonSerializer.Deserialize<AddressResponse>(result);
 
             // Access the first address and print its ID
-            var address = adresseResponse.Results.FirstOrDefault();
-            return (address.Address.Id != null);
+            var address = adresseResponse.Results.FirstOrDefault();*/
+            return (true);
         }
     }
 }

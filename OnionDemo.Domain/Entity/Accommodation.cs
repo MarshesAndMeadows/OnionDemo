@@ -4,10 +4,10 @@
     {
         private readonly List<Booking>? _bookings;
         protected Accommodation() { }
-
-        protected Accommodation(Host host)
+        protected Accommodation(Host host, string address)
         {
             Host = host;
+            Address = address;
         }
 
         public Host Host { get; protected set; }
@@ -16,29 +16,22 @@
 
         public IReadOnlyCollection<Booking> Bookings => _bookings;
 
-        public static Accommodation Create(Host host)
+        public static Accommodation Create(Host host, string address)
         {
-            return new Accommodation(host);
+            return new Accommodation(host, address);
         }
 
-        public void AddBooking(DateOnly startDate, DateOnly endDate)
+        public void AddBooking( Guest guest, DateOnly startDate, DateOnly endDate)
         {
-            var booking = Booking.Create(startDate, endDate, Bookings);
+            var booking = Booking.Create(guest, startDate, endDate, Bookings);
             _bookings.Add(booking);
         }
 
-        public Booking UpdateBooking(int bookingId, DateOnly startDate, DateOnly endDate, Review review)
+        public Booking UpdateBooking(Review review, Guest guest, int bookingId, DateOnly startDate, DateOnly endDate)
         {
             var booking = Bookings.FirstOrDefault(b => b.Id == bookingId);
             if (booking == null) throw new ArgumentException("Booking not found");
-            booking.Update(startDate, endDate, review, Bookings);
-            return booking;
-        }
-        public Booking UpdateBooking(int bookingId, DateOnly startDate, DateOnly endDate)
-        {
-            var booking = Bookings.FirstOrDefault(b => b.Id == bookingId);
-            if (booking == null) throw new ArgumentException("Booking not found");
-            booking.Update(startDate, endDate, Bookings);
+            booking.Update(review, guest, startDate, endDate, Bookings);
             return booking;
         }
     }

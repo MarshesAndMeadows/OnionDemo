@@ -6,8 +6,9 @@ public class Booking : DomainEntity
 
     protected Booking(){}
 
-    private Booking(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
+    private Booking(Guest guest, DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
     {
+        Guest = guest;
         StartDate = startDate;
         EndDate = endDate;
 
@@ -21,14 +22,44 @@ public class Booking : DomainEntity
     public Review? Review { get; protected set; }
     public Guest Guest { get; protected set; }
 
-    public void Update(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
+    public void Update(Review? review, Guest guest, DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
+    {
+        Review = review;
+        Guest = guest;
+        StartDate = startDate;
+        EndDate = endDate;
+        AssureStartDateBeforeEndDate();
+        AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
+        AssureNoOverlapping(existingBookings);
+    }
+    public void Update(DateOnly startDate, DateOnly endDate, Review? review, IEnumerable<Booking> existingBookings)
     {
         StartDate = startDate;
         EndDate = endDate;
+        Review = review;
 
         AssureStartDateBeforeEndDate();
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(existingBookings);
+    }
+
+    public static Booking Create(Guest guest, DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
+    {
+        return new Booking(guest, startDate, endDate, existingBookings);
+    }
+
+    public void AddReview(Review review)
+    {
+        AssureBookingMustBeInPast(DateOnly.FromDateTime(DateTime.Now));
+        try
+        {
+            Review = review;
+            
+        }
+        catch (Exception e)
+        {
+            throw new ArgumentException("Rating value must be between 0 and 100.");
+        }
     }
     protected void AssureStartDateBeforeEndDate()
     {
@@ -36,7 +67,7 @@ public class Booking : DomainEntity
     }
     protected void AssureBookingMustBeInFuture(DateOnly now)
     {
-        // Booking skal være i fremtiden
+
         if (StartDate <= now)
             throw new ArgumentException("Booking skal være i fremtiden");
     }
@@ -54,33 +85,4 @@ public class Booking : DomainEntity
             throw new ArgumentException("Booking skal være i fortiden.");
     }
 
-    public static Booking Create(DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
-    {
-        return new Booking(startDate, endDate, existingBookings);
-    }
-
-    public void Update(DateOnly startDate, DateOnly endDate, Review? review, IEnumerable<Booking> existingBookings)
-    {
-        StartDate = startDate;
-        EndDate = endDate;
-        Review = review;
-
-        AssureStartDateBeforeEndDate();
-        AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
-        AssureNoOverlapping(existingBookings);
-    }
-
-    public void AddReview(Review review)
-    {
-        AssureBookingMustBeInPast(DateOnly.FromDateTime(DateTime.Now));
-        try
-        {
-            Review = review;
-            
-        }
-        catch (Exception e)
-        {
-            throw new ArgumentException("Rating value must be between 0 and 100.");
-        }
-    }
 }

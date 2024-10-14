@@ -12,5 +12,6 @@ namespace OnionDemo.Application.Queries.GuestQuery
         public int Id { get; set; }
 
         public List<BookingDto> Bookings;
+        public byte[] RowVersion { get; set; } = null!;
     }
 }
