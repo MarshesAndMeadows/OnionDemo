@@ -9,6 +9,7 @@ public static class ServiceCollectionExtension
     {
         services.AddScoped<IAccommodationCommand, AccommodationCommand>();
         services.AddScoped<IReviewCommand, ReviewCommand>();
+        services.AddScoped<IHostCommand, HostCommand>();
         return services;
     }
 }

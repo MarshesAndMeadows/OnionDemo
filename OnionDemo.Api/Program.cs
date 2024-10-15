@@ -3,6 +3,7 @@ using OnionDemo.Application;
 using OnionDemo.Application.Commands;
 using OnionDemo.Application.Commands.CommandDTO.Accommodation;
 using OnionDemo.Application.Commands.CommandDTO.Booking;
+using OnionDemo.Application.Commands.CommandDTO.Host;
 using OnionDemo.Application.Commands.CommandDTO.Review;
 using OnionDemo.Application.Queries.BookingQuery;
 using OnionDemo.Application.Queries.HostQuery;
@@ -37,15 +38,16 @@ app.UseHttpsRedirection();
 
 // https://learn.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-8.0&tabs=visual-studio
 app.MapGet("/hello", () => "Hello World");
-
-app.MapGet("/accommodation/{id}/booking", (int id, IBookingQuery query) => query.GetBookings(id));
+app.MapGet("/accommodation/{id}/bookings", (int id, IBookingQuery query) => query.GetBookings(id));
 app.MapGet("/accommodation/{accommodationId}/booking/{bookingId}", (int accommodationId, int bookingId, IBookingQuery query) => query.GetBooking(accommodationId, bookingId));
 app.MapPost("/accommodation/booking", (CreateBookingDto booking, IAccommodationCommand command) => command.CreateBooking(booking));
+app.MapPost("/review", (CreateReviewDto review, IReviewCommand command) => command.Create(review));
+app.MapPost("/host", (createHostDto host, IHostCommand command) => command.Create(host));
+
+//above works, below unknown
+
 app.MapPut("/accommodation/booking", (UpdateBookingDto booking, IAccommodationCommand command) => command.UpdateBooking(booking));
 app.MapPost("/accommodation", async (CreateAccommodationDto accommodation, IAccommodationCommand command) => command.Create(accommodation));
-
-app.MapPost("/review",(CreateReviewDto review, IReviewCommand command) => command.Create(review));
-
 app.MapGet("/host/{id}/accommodation", (int id, IHostQuery query) => query.GetAccommodations(id));
 
 app.Run();

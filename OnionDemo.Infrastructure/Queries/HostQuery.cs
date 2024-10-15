@@ -19,32 +19,35 @@ namespace OnionDemo.Infrastructure.Queries
             var host = db.Hosts
                 .Include(a => a.Accommodations)
                 .ThenInclude(a => a.Bookings)
+                .ThenInclude(a => a.Review)
                 .FirstOrDefault(h => h.Id == hostId);
 
             if (host == null) return null;
 
-            return new HostDto
+            var result = new HostDto
             {
                 Id = host.Id,
                 Accommodations = host.Accommodations.Select(a => new AccommodationDTO
                 {
                     Id = a.Id,
                     HostId = a.Host.Id,
+                    Address = a.Address,
                     Bookings = a.Bookings.Select(b => new BookingDto
                     {
                         Id = b.Id,
                         StartDate = b.StartDate,
                         EndDate = b.EndDate,
                         RowVersion = b.RowVersion,
-                        Review = new ReviewDto()
+                        Review = b.Review != null ? new ReviewDto()
                         {
                             Blurb = b.Review.Blurb,
                             Rating = b.Review.Rating
-                        },
+                        } : null,
                         AccommodationId = a.Id,
                     })
                 })
             };
+            return result;
         }
     }
 }

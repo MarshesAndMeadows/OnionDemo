@@ -13,6 +13,7 @@ namespace OnionDemo.Infrastructure.Repos
         void IAccommodationRepository.Add(Accommodation accommodation)
         {
             context.Accommodations.Add(accommodation);
+            //host becomes null here???
             context.SaveChanges();
         }
         void IAccommodationRepository.AddBooking(Accommodation accommodation)

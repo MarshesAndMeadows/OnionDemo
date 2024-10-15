@@ -16,10 +16,13 @@ namespace OnionDemo.Domain.Entity
 
         public IReadOnlyCollection<Accommodation> Accommodations => _accommodations ?? [];
         public string Name { get; set; }
-
         public static Host Create(string name)
         {
             return new Host(name, new List<Accommodation>());
         }
+/*        public void AddAccommodation(Accommodation accommodation)
+        {
+            _accommodations.Add(accommodation);
+        }*/
     }
 }

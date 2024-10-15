@@ -8,5 +8,7 @@ namespace OnionDemo.Application.Queries.AccommodationQuery
         public int Id { get; set; }
         public IEnumerable<BookingDto> Bookings { get; set; }
         public int HostId { get; set; }
+
+        public string Address { get; set; }
     }
 }

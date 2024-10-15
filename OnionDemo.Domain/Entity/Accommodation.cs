@@ -18,7 +18,8 @@
 
         public static Accommodation Create(Host host, string address)
         {
-            return new Accommodation(host, address);
+            var accommodation = new Accommodation(host, address);
+            return accommodation;
         }
 
         public void AddBooking( Guest guest, DateOnly startDate, DateOnly endDate)

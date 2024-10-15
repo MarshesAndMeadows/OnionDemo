@@ -11,6 +11,12 @@ namespace OnionDemo.Infrastructure.Repos
 {
     public class HostRepository(BookMyHomeContext db) : IHostRepository
     {
+        void IHostRepository.Create(Host host)
+        {
+            db.Hosts.Add(host);
+            db.SaveChanges();
+        }
+
         Host IHostRepository.Get(int id)
         {
             return db.Hosts.Single(a => a.Id == id);

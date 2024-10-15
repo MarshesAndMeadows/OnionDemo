@@ -10,5 +10,7 @@ namespace OnionDemo.Application.Interfaces
     public interface IHostRepository
     {
         Host Get(int id);
+
+        void Create(Host host);
     }
 }

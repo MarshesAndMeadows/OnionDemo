@@ -29,8 +29,9 @@ namespace OnionDemo.Application.Commands
             var addressExists = await _repository.ValidateAddress(createDto.Address);
             if (addressExists)
             {
+                var address = createDto.Address;
                 var host = _hostRepository.Get(createDto.HostId);
-                var accommodation = Accommodation.Create(host, createDto.Address);
+                var accommodation = Accommodation.Create(host, address);
                 _repository.Add(accommodation);
             }
         }
