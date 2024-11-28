@@ -13,8 +13,7 @@ namespace OnionDemo.Application.Commands.CommandDTO.Booking
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
         public int AccommodationId { get; set; }
-        public byte[] RowVersion { get; set; }
-        public int reviewId { get; set; }
-        public int guestId { get; set; }
+        public string RowVersion { get; set; }
+        public int GuestId { get; set; }
     }
 }

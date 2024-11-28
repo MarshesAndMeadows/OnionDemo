@@ -32,6 +32,7 @@ namespace OnionDemo.Application.Commands
                 var address = createDto.Address;
                 var host = _hostRepository.Get(createDto.HostId);
                 var accommodation = Accommodation.Create(host, address);
+                host.AddAccommodation(accommodation);
                 _repository.Add(accommodation);
             }
         }
@@ -113,13 +114,13 @@ namespace OnionDemo.Application.Commands
 
                 //Load
                 Accommodation accommodation = _repository.GetAccommodation(updateBookingDto.AccommodationId);
-                var review = _reviewRepository.Get(updateBookingDto.reviewId);
-                var guest = _guestRepository.Get(updateBookingDto.guestId);
+                var guest = _guestRepository.Get(updateBookingDto.GuestId);
                 // Do
-                var booking = accommodation.UpdateBooking(review, guest, updateBookingDto.Id, updateBookingDto.StartDate, updateBookingDto.EndDate);
+                var booking = accommodation.UpdateBooking(guest, updateBookingDto.Id, updateBookingDto.StartDate, updateBookingDto.EndDate);
 
                 // Save
-                _repository.UpdateBooking(booking, updateBookingDto.RowVersion);
+                var rowVersion = _uow.ConvertHexToByteArray(updateBookingDto.RowVersion);
+                _repository.UpdateBooking(booking, rowVersion);
 
                 _uow.Commit();
             }
@@ -142,5 +143,6 @@ namespace OnionDemo.Application.Commands
         {
             throw new NotImplementedException();
         }
+
     }
 }

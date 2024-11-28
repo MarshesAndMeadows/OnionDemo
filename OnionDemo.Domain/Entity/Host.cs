@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace OnionDemo.Domain.Entity
 {
     public class Host : DomainEntity
     {
-        protected Host(){}
+        protected Host()
+        {
+            _accommodations = new List<Accommodation>();
+        }
 
         private Host(string name, List<Accommodation> accommodations)
         {
@@ -20,9 +24,13 @@ namespace OnionDemo.Domain.Entity
         {
             return new Host(name, new List<Accommodation>());
         }
-/*        public void AddAccommodation(Accommodation accommodation)
+        public void AddAccommodation(Accommodation accommodation)
         {
+            if (_accommodations == null)
+            {
+                _accommodations = new List<Accommodation>();
+            }
             _accommodations.Add(accommodation);
-        }*/
+        }
     }
 }

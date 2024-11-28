@@ -447,3 +447,5 @@ C:\temp\OnionDemo_GitHub\OnionDemo.Api\obj\Debug\net8.0\refint\OnionDemo.Api.dll
 C:\temp\OnionDemo_GitHub\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.pdb
 C:\temp\OnionDemo_GitHub\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.genruntimeconfig.cache
 C:\temp\OnionDemo_GitHub\OnionDemo.Api\obj\Debug\net8.0\ref\OnionDemo.Api.dll
+C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\OnionDemo.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\temp\OnionDemo\OnionDemo.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

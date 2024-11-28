@@ -14,5 +14,7 @@ namespace OnionDemo.Application.Helpers
         void Rollback();
 
         void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Serializable);
+
+        public byte[] ConvertHexToByteArray(string hex);
     }
 }

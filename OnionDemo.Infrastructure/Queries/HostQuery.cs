@@ -19,7 +19,7 @@ namespace OnionDemo.Infrastructure.Queries
             var host = db.Hosts
                 .Include(a => a.Accommodations)
                 .ThenInclude(a => a.Bookings)
-                .ThenInclude(a => a.Review)
+                .ThenInclude(b => b.Review)
                 .FirstOrDefault(h => h.Id == hostId);
 
             if (host == null) return null;

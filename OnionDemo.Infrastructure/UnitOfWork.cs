@@ -33,5 +33,11 @@ namespace OnionDemo.Infrastructure
             _transaction.Dispose();
             _transaction = null;
         }
+        public byte[] ConvertHexToByteArray(string hex)
+        {
+            return Enumerable.Range(0, hex.Length / 2)
+                             .Select(x => Convert.ToByte(hex.Substring(x * 2, 2), 16))
+                             .ToArray();
+        }
     }
 }

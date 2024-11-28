@@ -32,12 +32,11 @@ public class Booking : DomainEntity
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(existingBookings);
     }
-    public void Update(DateOnly startDate, DateOnly endDate, Review? review, IEnumerable<Booking> existingBookings)
+    public void Update(Guest guest, DateOnly startDate, DateOnly endDate, IEnumerable<Booking> existingBookings)
     {
+        Guest = guest;
         StartDate = startDate;
         EndDate = endDate;
-        Review = review;
-
         AssureStartDateBeforeEndDate();
         AssureBookingMustBeInFuture(DateOnly.FromDateTime(DateTime.Now));
         AssureNoOverlapping(existingBookings);
